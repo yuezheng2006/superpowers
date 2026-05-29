@@ -18,48 +18,72 @@ const collectorReferences = [
 ];
 
 const searches = [
-  { keyword: "Suno AI 原创歌曲", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { keyword: "Suno AI 改编", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { keyword: "AI 音乐 MV Suno", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
+  // Temporarily disabled to focus on UP space collection
+  // { keyword: "Suno AI 原创歌曲", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  // { keyword: "Suno AI 改编", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  // { keyword: "AI 音乐 MV Suno", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
 ];
 
 const seedVideos = [
-  { bvid: "BV14RqeBPEPU", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  // 天花板上吊着猫 - expanded collection
+  { bvid: "BV1ooGh6mEyq", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV128Ls6XEvg", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1sgLc6JE8Q", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1eh5B6iENF", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1UJ5U69E28", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1Vj5T61Eid", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1HKR2BTED2", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1rkRHBvEQE", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1Bc9RBUEV1", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1DL9CBzEPo", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1FyoRBcE71", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1Q9otBuEui", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1sjocBSEtM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1e6d7B5EBd", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1T9QVBLEY5", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1H1QxBuEdh", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1hqD2B3EGc", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV182QwBnELf", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1VoDBBxEE5", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1H5SQBBELX", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1QvDABXEpg", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1zXXCBnEVe", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1PLXQBUEM4", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1p5XKBQE8B", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1GdXjBeE2a", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1NWXcB3EM4", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1ChAGzhEGg", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
   { bvid: "BV1osAVzWEmM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
-  { bvid: "BV1X8sszKEHD", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
-  { bvid: "BV19vsQz2EG9", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1Lmw6z8E1K", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV16gw5zfEgF", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1x9cUzeEDM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV14tPRz4Eqb", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1ZUNMzJEfJ", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1WAPBzzEGm", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1AEABziEGC", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1ajAUz2Ea1", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV17SfWBVECm", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1kjfFBmEjC", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1qPc3zVE8d", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1ZQFCziEE2", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1PVcAzNEqM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1AkFCzCE4J", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1uGFczPEth", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1dWfXBXEqs", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1Vz68BzE53", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1EH6qBNEYM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1zrzRBnERQ", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1TyzhBwEVV", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1xszrBREUr", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV14RqeBPEPU", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
   { bvid: "BV1BJS6BvERx", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
-  { bvid: "BV1z25E69EWB", playlist: "黑蓝墨水就爱搞事儿 · 老歌翻新", playlistId: "blackblue-remix" },
-  { bvid: "BV1J2vXBvE3i", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
-  { bvid: "BV1oKiwBXEaP", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
-  { bvid: "BV16oiyBUEeN", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
-  { bvid: "BV1ho2aB4Exn", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1K32vBdED3", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1nzm7BiEqj", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1SPmuBtEoc", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1X5BxBpEqY", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1b1BBBSEiR", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1zz2XB8EtG", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1JLzQBrEpN", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV1Cji5BvEaL", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
-  { bvid: "BV16nshziEQw", playlist: "夏火ww · R&B 改编", playlistId: "xiahuo-rnb" },
-  { bvid: "BV17iDCBLEtW", playlist: "复利大叔 · 星神二创曲", playlistId: "fuli-starrail" },
-  { bvid: "BV1DzDxBJET2", playlist: "复利大叔 · 星神二创曲", playlistId: "fuli-starrail" },
-  { bvid: "BV15dDSBdEur", playlist: "八十万刁民总教头 · AI 翻唱", playlistId: "chief-ai-cover" },
-  { bvid: "BV1ipCgB8Enx", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { bvid: "BV1CD421A7Nc", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { bvid: "BV1fr421t7zz", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { bvid: "BV16x4y1m7Vy", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { bvid: "BV1Lz421o7MJ", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
+  { bvid: "BV19vsQz2EG9", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1X8sszKEHD", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" }
 ];
 
 const upSpaces = [
-  { mid: "1091", name: "天花板上吊着猫", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno", keywords: ["Suno", "AI音乐", "AI 音乐"] },
-  { mid: "314203971", name: "黑蓝墨水就爱搞事儿", playlist: "黑蓝墨水就爱搞事儿 · 老歌翻新", playlistId: "blackblue-remix", keywords: ["Suno", "AI音乐"] },
-  { mid: "15687479", name: "所长bibabo", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style", keywords: ["Suno", "AI音乐"] },
-  { mid: "3546657844595574", name: "阿德托昆博带件衣服", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel", keywords: ["Suno", "黑人福音"] },
-  { mid: "3546682457533247", name: "夏火ww", playlist: "夏火ww · R&B 改编", playlistId: "xiahuo-rnb", keywords: ["Suno", "R&B", "AI改编"] },
-  { mid: "5104808", name: "复利大叔", playlist: "复利大叔 · 星神二创曲", playlistId: "fuli-starrail", keywords: ["suno", "AI音乐", "星神二创曲"] }
+  // Temporarily disabled - using seed videos instead due to API restrictions
+  // { mid: "1091", name: "天花板上吊着猫", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno", keywords: ["Suno", "AI音乐", "AI 音乐", "cover", "SUNO"] }
 ];
 
 const playlistPlans = [
@@ -296,21 +320,46 @@ async function videoByBvid(seed) {
 
 async function collectSpaceVideos(space) {
   const items = [];
-  for (const keyword of space.keywords) {
-    const url = await signedUrl("https://api.bilibili.com/x/space/wbi/arc/search", {
-      mid: space.mid,
-      pn: 1,
-      ps: 30,
-      order: "pubdate",
-      keyword
-    });
-    const json = await fetchJson(url);
-    const videos = json?.data?.list?.vlist || [];
-    for (const video of videos) {
-      if (!video.bvid) continue;
-      if (!isMusicWork(video.title, video.description)) continue;
-      const item = await videoByBvid({ bvid: video.bvid, playlist: space.playlist, playlistId: space.playlistId });
-      if (item) items.push(item);
+
+  // Use the simpler API endpoint without WBI signature requirement
+  for (let page = 1; page <= 5; page++) {
+    try {
+      const url = new URL("https://api.bilibili.com/x/space/arc/search");
+      url.searchParams.set("mid", space.mid);
+      url.searchParams.set("pn", page);
+      url.searchParams.set("ps", 50);
+
+      console.log(`Fetching page ${page} for ${space.name}...`);
+      const json = await fetchJson(url);
+
+      // Debug: log the response structure
+      console.log(`Response code: ${json?.code}, message: ${json?.message}`);
+      console.log(`Data structure:`, JSON.stringify(json?.data, null, 2).slice(0, 500));
+
+      const videos = json?.data?.list?.vlist || [];
+
+      console.log(`Page ${page}: Found ${videos.length} videos from ${space.name}`);
+
+      if (videos.length === 0) break; // No more videos
+
+      for (const video of videos) {
+        if (!video.bvid) continue;
+        if (!isMusicWork(video.title, video.description)) {
+          console.log(`Skipped non-music: ${video.title}`);
+          continue;
+        }
+        const item = await videoByBvid({ bvid: video.bvid, playlist: space.playlist, playlistId: space.playlistId });
+        if (item && passesQualityBar(item)) {
+          items.push(item);
+          console.log(`✓ Added: ${item.title} (${item.stats.views} views)`);
+        }
+      }
+
+      // Add a delay between pages to avoid rate limiting
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    } catch (error) {
+      console.warn(`Page ${page} fetch failed for ${space.name}: ${error.message}`);
+      break;
     }
   }
   return items;

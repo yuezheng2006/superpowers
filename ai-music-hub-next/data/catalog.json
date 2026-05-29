@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T07:21:15.575Z",
+  "generatedAt": "2026-05-29T07:34:21.947Z",
   "source": "Bilibili public web APIs + GitHub open-source collector references",
   "collectorReferences": [
     {
@@ -81,99 +81,6 @@
   ],
   "items": [
     {
-      "id": "BV16nshziEQw",
-      "bvid": "BV16nshziEQw",
-      "title": "爱要坦荡荡但是R&B",
-      "author": "夏火ww",
-      "authorUrl": "https://space.bilibili.com/33489116",
-      "url": "https://www.bilibili.com/video/BV16nshziEQw",
-      "cover": "https://i0.hdslb.com/bfs/archive/c962d19d883be1005611c50db8ea8db3655e94c6.jpg",
-      "description": "suno AI 改编",
-      "duration": 205,
-      "publishedAt": "2025-10-22T14:18:02.000Z",
-      "stats": {
-        "views": 2749624,
-        "danmaku": 569,
-        "favorites": 104477
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "夏火ww · R&B 改编",
-      "playlistId": "xiahuo-rnb",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1ho2aB4Exn",
-      "bvid": "BV1ho2aB4Exn",
-      "title": "[SUNO V5]孙燕姿-我不难过-黑人福音版",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1ho2aB4Exn",
-      "cover": "https://i2.hdslb.com/bfs/archive/c0f344a5cc36f5dc63b5cded1c9b5c377de002fd.jpg",
-      "description": "孙燕姿铁粉，突发奇想把我不难过改成最近很火的黑人福音版本，觉得还挺好听",
-      "duration": 274,
-      "publishedAt": "2025-12-04T06:21:10.000Z",
-      "stats": {
-        "views": 2001099,
-        "danmaku": 1076,
-        "favorites": 56087
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV17iDCBLEtW",
-      "bvid": "BV17iDCBLEtW",
-      "title": "列神争鸣：命途争锋战歌！诸神各执真理，把宇宙撕成回音...#星神二创曲",
-      "author": "复利大叔",
-      "authorUrl": "https://space.bilibili.com/4658735",
-      "url": "https://www.bilibili.com/video/BV17iDCBLEtW",
-      "cover": "https://i0.hdslb.com/bfs/archive/952e734a9abd54434328ed062f00ac921baa75f4.jpg",
-      "description": "歌：列神争鸣\n词：复利大叔\n曲：suno AI",
-      "duration": 286,
-      "publishedAt": "2026-04-11T13:00:00.000Z",
-      "stats": {
-        "views": 1536689,
-        "danmaku": 1782,
-        "favorites": 102607
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "复利大叔 · 星神二创曲",
-      "playlistId": "fuli-starrail",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV15dDSBdEur",
-      "bvid": "BV15dDSBdEur",
-      "title": "[SUNO V5.5] 《夜曲》周杰伦 AI翻唱 黑人大叔卖力演唱 “夜曲还没写完 我已经崩溃”",
-      "author": "八十万刁民总教头",
-      "authorUrl": "https://space.bilibili.com/1390382993",
-      "url": "https://www.bilibili.com/video/BV15dDSBdEur",
-      "cover": "https://i0.hdslb.com/bfs/archive/7e9a8c3423ebb406f7cb0f2847c0259919bae6e8.jpg",
-      "description": "本视频为个人兴趣创作，使用人工智能语音合成技术生成，非歌手本人演唱。原歌曲的词曲著作权归原始权利人所有，本人不主张对原作品的任何权利。本作品非商业用途，仅供交流学习。如涉及版权问题，请权利人联系，本人将及时处理。",
-      "duration": 274,
-      "publishedAt": "2026-04-12T04:29:27.000Z",
-      "stats": {
-        "views": 1080309,
-        "danmaku": 879,
-        "favorites": 38809
-      },
-      "tags": [
-        "Suno",
-        "改编"
-      ],
-      "playlist": "八十万刁民总教头 · AI 翻唱",
-      "playlistId": "chief-ai-cover",
-      "source": "bilibili-view"
-    },
-    {
       "id": "BV1X8sszKEHD",
       "bvid": "BV1X8sszKEHD",
       "title": "[SUNO V5] 我落泪情绪零碎 Neo soul Cover (原唱: 周杰伦)",
@@ -185,7 +92,7 @@
       "duration": 275,
       "publishedAt": "2025-10-24T19:48:31.000Z",
       "stats": {
-        "views": 1036549,
+        "views": 1036562,
         "danmaku": 523,
         "favorites": 39791
       },
@@ -194,236 +101,6 @@
       ],
       "playlist": "天花板上吊着猫 · Suno 实验",
       "playlistId": "ceiling-cat-suno",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1DzDxBJET2",
-      "bvid": "BV1DzDxBJET2",
-      "title": "「星际和平公司」必修曲目：筑！筑！筑！一切献给琥珀王...",
-      "author": "复利大叔",
-      "authorUrl": "https://space.bilibili.com/4658735",
-      "url": "https://www.bilibili.com/video/BV1DzDxBJET2",
-      "cover": "https://i2.hdslb.com/bfs/archive/225b6aa105affa4c4b23423d3afa25d6030e504c.jpg",
-      "description": "歌名：《筑！筑！筑！》（存护之歌）\n词：复利大叔\n曲：suno AI",
-      "duration": 170,
-      "publishedAt": "2026-04-09T13:51:32.000Z",
-      "stats": {
-        "views": 717510,
-        "danmaku": 624,
-        "favorites": 29046
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "复利大叔 · 星神二创曲",
-      "playlistId": "fuli-starrail",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1SPmuBtEoc",
-      "bvid": "BV1SPmuBtEoc",
-      "title": "【SUNO V5】丁世光-Simon-黑人福音版",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1SPmuBtEoc",
-      "cover": "https://i0.hdslb.com/bfs/archive/f30019cf57954f8e6b210e5a06d8257999c05ab8.jpg",
-      "description": "【SUNO V5】丁世光-Simon-黑人福音版",
-      "duration": 275,
-      "publishedAt": "2025-12-11T04:54:53.000Z",
-      "stats": {
-        "views": 484292,
-        "danmaku": 376,
-        "favorites": 11440
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1X5BxBpEqY",
-      "bvid": "BV1X5BxBpEqY",
-      "title": "【SUNO V5】陶喆-流沙-黑人福音R&B版",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1X5BxBpEqY",
-      "cover": "https://i1.hdslb.com/bfs/archive/129b237adbdfeafc1cc76dff6ae02f3a00eea20e.jpg",
-      "description": "【SUNO V5】陶喆-流沙-黑人福音R&B版",
-      "duration": 250,
-      "publishedAt": "2025-12-22T10:24:20.000Z",
-      "stats": {
-        "views": 329813,
-        "danmaku": 529,
-        "favorites": 4028
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1K32vBdED3",
-      "bvid": "BV1K32vBdED3",
-      "title": "【SUNO V5】黑人福音-孙燕姿-我怀念的",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1K32vBdED3",
-      "cover": "https://i0.hdslb.com/bfs/archive/86ee2fa8e8dc8e1e7c929ffe9b9dfdafc018b29a.jpg",
-      "description": "这版本魔改有些严重，但后面的高潮部分确实太好听了，虽然基本已经脱离了和原曲的关系",
-      "duration": 285,
-      "publishedAt": "2025-12-04T08:05:35.000Z",
-      "stats": {
-        "views": 253108,
-        "danmaku": 208,
-        "favorites": 2791
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1nzm7BiEqj",
-      "bvid": "BV1nzm7BiEqj",
-      "title": "【SUNO V5】HUSH-第三人称-黑人福音",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1nzm7BiEqj",
-      "cover": "https://i0.hdslb.com/bfs/archive/dc7757d59d1b56d7ba0887e5b70ad773343b9511.jpg",
-      "description": "【SUNO V5】HUSH-第三人称-黑人福音",
-      "duration": 278,
-      "publishedAt": "2025-12-12T11:38:35.000Z",
-      "stats": {
-        "views": 246579,
-        "danmaku": 245,
-        "favorites": 4923
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1b1BBBSEiR",
-      "bvid": "BV1b1BBBSEiR",
-      "title": "【SUNO V5】陶喆-普通朋友-黑人福音R&B",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1b1BBBSEiR",
-      "cover": "https://i0.hdslb.com/bfs/archive/08325bc3f697023ad5281ea09addcb8c285a5d7c.jpg",
-      "description": "【SUNO V5】陶喆-普通朋友-黑人福音R&B",
-      "duration": 265,
-      "publishedAt": "2025-12-27T00:53:43.000Z",
-      "stats": {
-        "views": 218809,
-        "danmaku": 142,
-        "favorites": 2651
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1zz2XB8EtG",
-      "bvid": "BV1zz2XB8EtG",
-      "title": "[SUNO V5]陈绮贞-太聪明-黑人福音版",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1zz2XB8EtG",
-      "cover": "https://i2.hdslb.com/bfs/archive/a35cdd2cf209af8a9b7c709bff21877ed4eda29c.jpg",
-      "description": "这个版本相对更加符合黑人唱诗班的本源，更欢快，增加更多合唱的互动",
-      "duration": 197,
-      "publishedAt": "2025-12-06T11:40:10.000Z",
-      "stats": {
-        "views": 136264,
-        "danmaku": 108,
-        "favorites": 1366
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1Cji5BvEaL",
-      "bvid": "BV1Cji5BvEaL",
-      "title": "【SUNO V5】刘欢-我欲成仙-黑人福音Soul",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1Cji5BvEaL",
-      "cover": "https://i2.hdslb.com/bfs/archive/85d597abd70bf6a82fef20f60a6899cc55194737.jpg",
-      "description": "【SUNO V5】刘欢-我欲成仙-黑人福音Soul",
-      "duration": 225,
-      "publishedAt": "2026-01-01T04:05:52.000Z",
-      "stats": {
-        "views": 124882,
-        "danmaku": 163,
-        "favorites": 1278
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1CD421A7Nc",
-      "bvid": "BV1CD421A7Nc",
-      "title": "【Suno】不懂我如",
-      "author": "没事卡了",
-      "authorUrl": "https://space.bilibili.com/426296065",
-      "url": "https://www.bilibili.com/video/BV1CD421A7Nc",
-      "cover": "https://i2.hdslb.com/bfs/archive/33a8e98a6c1b917591d63c0fd0804e979aa1dad0.jpg",
-      "description": "",
-      "duration": 141,
-      "publishedAt": "2024-05-17T13:14:33.000Z",
-      "stats": {
-        "views": 103537,
-        "danmaku": 88,
-        "favorites": 157
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "B站 AI 音乐精选",
-      "playlistId": "bilibili-ai-music-picks",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1JLzQBrEpN",
-      "bvid": "BV1JLzQBrEpN",
-      "title": "【SUNO V5】牵丝戏-黑人福音Soul",
-      "author": "阿德托昆博带件衣服",
-      "authorUrl": "https://space.bilibili.com/15436862",
-      "url": "https://www.bilibili.com/video/BV1JLzQBrEpN",
-      "cover": "https://i2.hdslb.com/bfs/archive/ec5bf37b0b9c27aba24f1e4f31687cdeabea77d7.jpg",
-      "description": "【SUNO V5】牵丝戏-黑人福音Soul",
-      "duration": 260,
-      "publishedAt": "2026-01-25T10:11:52.000Z",
-      "stats": {
-        "views": 93398,
-        "danmaku": 55,
-        "favorites": 1235
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "阿德托昆博 · 黑人福音",
-      "playlistId": "adeto-gospel",
       "source": "bilibili-view"
     },
     {
@@ -450,29 +127,6 @@
       "source": "bilibili-view"
     },
     {
-      "id": "BV1oKiwBXEaP",
-      "bvid": "BV1oKiwBXEaP",
-      "title": "【SUNO v5】单依纯「纯妹妹」全专10曲 AI COVER（黑人福音/SynthPop/R&B）",
-      "author": "所长bibabo",
-      "authorUrl": "https://space.bilibili.com/15687479",
-      "url": "https://www.bilibili.com/video/BV1oKiwBXEaP",
-      "cover": "https://i1.hdslb.com/bfs/archive/dfb446d6e9ebd7e60af3a23c1de0ab3e2c30754f.jpg",
-      "description": "【仅供学习参考，请勿商用】\n由 SUNO v5 的 Cover 功能制作，请大家支持单依纯原版《纯妹妹》！！\n大部分是黑人福音音乐影响下的曲风，《纯妹妹》单独准备了3个不太一样的版本，然后体会就是《珠玉》太难以取代了，或者说现在的AI还对它难以下手。\n\n00:00 还有什么更好的\n04:02 纯妹妹 Fusion Jazz Sis Ver.\n08:14 向日葵朝着夜\n11:53 假如我们还爱着\n15:30 我管不住我自己\n20:05 有趣\n23:50 我表示理解\n26:39 还你茉莉\n30:13 多少的光阴\n34:00 珠玉\n38:17 纯妹妹 80s Sis Ver.\n41:56 纯妹妹 Perfume Sis Ver.",
-      "duration": 2710,
-      "publishedAt": "2026-01-02T15:04:36.000Z",
-      "stats": {
-        "views": 46899,
-        "danmaku": 533,
-        "favorites": 1850
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "所长bibabo · 风格改编",
-      "playlistId": "bibabo-style",
-      "source": "bilibili-view"
-    },
-    {
       "id": "BV14RqeBPEPU",
       "bvid": "BV14RqeBPEPU",
       "title": "[SUNO V5] 废片 03: 爱情买卖: 什么？你说ai不会换气？",
@@ -484,9 +138,55 @@
       "duration": 203,
       "publishedAt": "2025-12-21T19:00:00.000Z",
       "stats": {
-        "views": 22453,
+        "views": 22454,
         "danmaku": 9,
         "favorites": 46
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1zrzRBnERQ",
+      "bvid": "BV1zrzRBnERQ",
+      "title": "[SUNO V5] 对你爱不完 future funk cover (原唱: 郭富城)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1zrzRBnERQ",
+      "cover": "https://i1.hdslb.com/bfs/archive/fe65e17f3b9f0540c7f0d60b4e9ecaeda5c4e963.jpg",
+      "description": "好好好",
+      "duration": 240,
+      "publishedAt": "2026-02-02T20:00:00.000Z",
+      "stats": {
+        "views": 22197,
+        "danmaku": 9,
+        "favorites": 746
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV17SfWBVECm",
+      "bvid": "BV17SfWBVECm",
+      "title": "[SUNO V5] 爱就一个字 alt r&b cover (原唱: 张信哲)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV17SfWBVECm",
+      "cover": "https://i2.hdslb.com/bfs/archive/e681d7820e60f1762ebf4b0895d117fd37424bed.jpg",
+      "description": "😅",
+      "duration": 302,
+      "publishedAt": "2026-03-01T22:00:00.000Z",
+      "stats": {
+        "views": 18385,
+        "danmaku": 1,
+        "favorites": 604
       },
       "tags": [
         "Suno"
@@ -519,6 +219,98 @@
       "source": "bilibili-view"
     },
     {
+      "id": "BV1uGFczPEth",
+      "bvid": "BV1uGFczPEth",
+      "title": "[SUNO V5] 李白 orchestral trap cover (原唱: 李荣浩)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1uGFczPEth",
+      "cover": "https://i2.hdslb.com/bfs/archive/769a74768d1a0c63882016c4ad2c78f009c65a83.jpg",
+      "description": "为了间奏这碟醋包了整盘饺子",
+      "duration": 239,
+      "publishedAt": "2026-02-09T20:00:00.000Z",
+      "stats": {
+        "views": 10953,
+        "danmaku": 3,
+        "favorites": 186
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1TyzhBwEVV",
+      "bvid": "BV1TyzhBwEVV",
+      "title": "[SUNO V5] 女儿情 bedroom pop cover (原唱: 吴静)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1TyzhBwEVV",
+      "cover": "https://i0.hdslb.com/bfs/archive/c1f1166b4e35bac44b13b01bc1c0fbe7f5176cd3.jpg",
+      "description": "",
+      "duration": 240,
+      "publishedAt": "2026-01-31T04:00:00.000Z",
+      "stats": {
+        "views": 10941,
+        "danmaku": 5,
+        "favorites": 156
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV14tPRz4Eqb",
+      "bvid": "BV14tPRz4Eqb",
+      "title": "[SUNO V5] 卷珠帘 future funk cover (原唱: 霍尊)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV14tPRz4Eqb",
+      "cover": "https://i0.hdslb.com/bfs/archive/3fe2e17f23c52ec372be4c783798c2e781d5057e.jpg",
+      "description": "",
+      "duration": 272,
+      "publishedAt": "2026-03-14T21:00:00.000Z",
+      "stats": {
+        "views": 10912,
+        "danmaku": 8,
+        "favorites": 312
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1AEABziEGC",
+      "bvid": "BV1AEABziEGC",
+      "title": "[SUNO V5] 美人鱼 glitch pop cover (原唱: 周杰伦)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1AEABziEGC",
+      "cover": "https://i0.hdslb.com/bfs/archive/c6f6f67b05c80241936c81f9d7a1e702c5713388.jpg",
+      "description": "",
+      "duration": 213,
+      "publishedAt": "2026-03-06T10:00:00.000Z",
+      "stats": {
+        "views": 10778,
+        "danmaku": 8,
+        "favorites": 250
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
       "id": "BV1HKR2BTED2",
       "bvid": "BV1HKR2BTED2",
       "title": "[SUNO] 爱的主打歌 deep house cover (原唱: 萧亚轩)",
@@ -530,9 +322,32 @@
       "duration": 260,
       "publishedAt": "2026-05-13T20:00:00.000Z",
       "stats": {
-        "views": 9826,
+        "views": 9831,
         "danmaku": 1,
         "favorites": 363
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1Vz68BzE53",
+      "bvid": "BV1Vz68BzE53",
+      "title": "[SUNO V5] 特别的爱给特别的你 大调版 (原唱: 伍思凯)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1Vz68BzE53",
+      "cover": "https://i1.hdslb.com/bfs/archive/e1971bb0649a4ebd0f51225d517c11b12f39d019.jpg",
+      "description": "好不好听另说，调必须给他改了💃",
+      "duration": 270,
+      "publishedAt": "2026-02-06T20:00:00.000Z",
+      "stats": {
+        "views": 9559,
+        "danmaku": 4,
+        "favorites": 118
       },
       "tags": [
         "Suno"
@@ -553,9 +368,101 @@
       "duration": 252,
       "publishedAt": "2026-04-24T19:00:00.000Z",
       "stats": {
-        "views": 9178,
+        "views": 9180,
         "danmaku": 2,
         "favorites": 358
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1dWfXBXEqs",
+      "bvid": "BV1dWfXBXEqs",
+      "title": "[SUNO V5] 小苹果 nu disco cover (原唱: 筷子兄弟)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1dWfXBXEqs",
+      "cover": "https://i1.hdslb.com/bfs/archive/d8c5eb49d63a2db90c4a8216d81ae637a2d6d071.jpg",
+      "description": "💃",
+      "duration": 212,
+      "publishedAt": "2026-02-08T21:00:00.000Z",
+      "stats": {
+        "views": 8548,
+        "danmaku": 1,
+        "favorites": 103
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1xszrBREUr",
+      "bvid": "BV1xszrBREUr",
+      "title": "[SUNO V5] 一千零一个愿望 math metal cover (原唱: 4 in love)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1xszrBREUr",
+      "cover": "https://i1.hdslb.com/bfs/archive/d8d0514b60a9cf44b2a875b2992c689978227f43.jpg",
+      "description": "听力竭了😅",
+      "duration": 272,
+      "publishedAt": "2026-01-29T08:00:00.000Z",
+      "stats": {
+        "views": 8075,
+        "danmaku": 6,
+        "favorites": 107
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1kjfFBmEjC",
+      "bvid": "BV1kjfFBmEjC",
+      "title": "[SUNO V5] 夜访吸血鬼 dark trap cover (原唱: 五月天)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1kjfFBmEjC",
+      "cover": "https://i2.hdslb.com/bfs/archive/ae086b0865681fae4df3b14bc4c0e7aaede4de8c.jpg",
+      "description": "《勇闯春节之我回来了》",
+      "duration": 267,
+      "publishedAt": "2026-02-27T07:00:00.000Z",
+      "stats": {
+        "views": 7501,
+        "danmaku": 1,
+        "favorites": 69
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1ZQFCziEE2",
+      "bvid": "BV1ZQFCziEE2",
+      "title": "[SUNO V5] 凌晨三点钟 reimagined (原唱: 张智成)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1ZQFCziEE2",
+      "cover": "https://i1.hdslb.com/bfs/archive/b3064bd908c2840010239e72a33cb21f607bfbe8.jpg",
+      "description": "为了主歌部分改了的和弦进行而包的这顿饺子...",
+      "duration": 250,
+      "publishedAt": "2026-02-14T20:00:00.000Z",
+      "stats": {
+        "views": 7274,
+        "danmaku": 2,
+        "favorites": 113
       },
       "tags": [
         "Suno"
@@ -576,9 +483,32 @@
       "duration": 269,
       "publishedAt": "2026-04-01T12:00:00.000Z",
       "stats": {
-        "views": 7255,
+        "views": 7256,
         "danmaku": 9,
         "favorites": 186
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1qPc3zVE8d",
+      "bvid": "BV1qPc3zVE8d",
+      "title": "[SUNO V5] 神奇 psychedelic disco cover (原唱: 孙燕姿)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1qPc3zVE8d",
+      "cover": "https://i0.hdslb.com/bfs/archive/c11f09eb50768ff43b27fe0f6ea4aabb46e1cfda.jpg",
+      "description": "另一个版本的神奇，朋友们",
+      "duration": 232,
+      "publishedAt": "2026-02-17T22:00:00.000Z",
+      "stats": {
+        "views": 7212,
+        "danmaku": 9,
+        "favorites": 141
       },
       "tags": [
         "Suno"
@@ -599,9 +529,55 @@
       "duration": 253,
       "publishedAt": "2026-04-08T19:00:00.000Z",
       "stats": {
-        "views": 6735,
+        "views": 6736,
         "danmaku": 6,
         "favorites": 166
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1PVcAzNEqM",
+      "bvid": "BV1PVcAzNEqM",
+      "title": "[SUNO V5] 威廉古堡 印象曲 (原唱: 周杰伦)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1PVcAzNEqM",
+      "cover": "https://i2.hdslb.com/bfs/archive/fffc867cfab6d327700c5b58deee92c82c5ef8b1.jpg",
+      "description": "😅",
+      "duration": 166,
+      "publishedAt": "2026-02-13T21:00:00.000Z",
+      "stats": {
+        "views": 6580,
+        "danmaku": 11,
+        "favorites": 57
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1AkFCzCE4J",
+      "bvid": "BV1AkFCzCE4J",
+      "title": "[SUNO V5] 你和我 electro-funk cover (原唱: 王力宏)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1AkFCzCE4J",
+      "cover": "https://i2.hdslb.com/bfs/archive/73673e1fb3ae2a5bc38eec1862d2f4c3f1863c26.jpg",
+      "description": "😅",
+      "duration": 267,
+      "publishedAt": "2026-02-11T12:00:00.000Z",
+      "stats": {
+        "views": 6033,
+        "danmaku": 2,
+        "favorites": 68
       },
       "tags": [
         "Suno"
@@ -622,7 +598,7 @@
       "duration": 258,
       "publishedAt": "2026-04-05T13:00:00.000Z",
       "stats": {
-        "views": 5979,
+        "views": 5980,
         "danmaku": 36,
         "favorites": 88
       },
@@ -645,7 +621,7 @@
       "duration": 290,
       "publishedAt": "2026-04-19T20:00:00.000Z",
       "stats": {
-        "views": 5875,
+        "views": 5878,
         "danmaku": 3,
         "favorites": 137
       },
@@ -668,9 +644,32 @@
       "duration": 255,
       "publishedAt": "2026-04-12T19:00:00.000Z",
       "stats": {
-        "views": 5858,
+        "views": 5859,
         "danmaku": 5,
         "favorites": 121
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1x9cUzeEDM",
+      "bvid": "BV1x9cUzeEDM",
+      "title": "[SUNO V5] FLY ME TO THE MOON glitch hop cover",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1x9cUzeEDM",
+      "cover": "https://i2.hdslb.com/bfs/archive/72e6a1408394c40aa930ef6c8b9c5b6100474d3b.jpg",
+      "description": "",
+      "duration": 254,
+      "publishedAt": "2026-03-18T06:00:00.000Z",
+      "stats": {
+        "views": 5770,
+        "danmaku": 0,
+        "favorites": 170
       },
       "tags": [
         "Suno"
@@ -691,7 +690,7 @@
       "duration": 272,
       "publishedAt": "2026-03-28T20:00:00.000Z",
       "stats": {
-        "views": 5708,
+        "views": 5709,
         "danmaku": 2,
         "favorites": 92
       },
@@ -714,7 +713,7 @@
       "duration": 192,
       "publishedAt": "2026-04-10T19:30:00.000Z",
       "stats": {
-        "views": 5630,
+        "views": 5634,
         "danmaku": 1,
         "favorites": 146
       },
@@ -726,27 +725,49 @@
       "source": "bilibili-view"
     },
     {
-      "id": "BV16oiyBUEeN",
-      "bvid": "BV16oiyBUEeN",
-      "title": "【补档 SUNO v5】单依纯 纯妹妹，but 草原/高原/秋叶原",
-      "author": "所长bibabo",
-      "authorUrl": "https://space.bilibili.com/15687479",
-      "url": "https://www.bilibili.com/video/BV16oiyBUEeN",
-      "cover": "https://i0.hdslb.com/bfs/archive/1c15385a29d1777e7d1bb0887ca84d3540e74b35.jpg",
-      "description": "使用SUNO v5 AI翻唱，全曲请移步对应分。应很多小伙伴的要求，给草原版本单独拉了个视频，同时补上之前没有发布过的另外两个版本，灵感分别来自一位美人谷的女歌手，和11区的团体。请勿商用或发布到任何音乐流媒体平台，谢谢大家，请支持单依纯的原曲！",
-      "duration": 715,
-      "publishedAt": "2026-01-07T13:55:37.000Z",
+      "id": "BV1EH6qBNEYM",
+      "bvid": "BV1EH6qBNEYM",
+      "title": "[SUNO V5] 星星月亮 jazz hip hop cover (原唱: 曾轶可)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1EH6qBNEYM",
+      "cover": "https://i2.hdslb.com/bfs/archive/52ecb66d2ece3bc850468e2e157c28029a1123a4.jpg",
+      "description": "😅",
+      "duration": 238,
+      "publishedAt": "2026-02-04T15:00:00.000Z",
       "stats": {
-        "views": 4999,
-        "danmaku": 36,
-        "favorites": 79
+        "views": 5608,
+        "danmaku": 1,
+        "favorites": 57
       },
       "tags": [
-        "Suno",
-        "改编"
+        "Suno"
       ],
-      "playlist": "所长bibabo · 风格改编",
-      "playlistId": "bibabo-style",
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1ajAUz2Ea1",
+      "bvid": "BV1ajAUz2Ea1",
+      "title": "[SUNO V5] 忘记他 alt pop cover (原唱: 邓丽君)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1ajAUz2Ea1",
+      "cover": "https://i2.hdslb.com/bfs/archive/b5ecf69d688628d61d8c93ad4bf187d44800801e.jpg",
+      "description": "",
+      "duration": 243,
+      "publishedAt": "2026-03-04T12:00:00.000Z",
+      "stats": {
+        "views": 5272,
+        "danmaku": 1,
+        "favorites": 74
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
       "source": "bilibili-view"
     },
     {
@@ -761,7 +782,7 @@
       "duration": 245,
       "publishedAt": "2026-04-16T20:00:00.000Z",
       "stats": {
-        "views": 4893,
+        "views": 4894,
         "danmaku": 4,
         "favorites": 54
       },
@@ -784,9 +805,55 @@
       "duration": 253,
       "publishedAt": "2026-03-27T11:00:00.000Z",
       "stats": {
-        "views": 4799,
+        "views": 4800,
         "danmaku": 0,
         "favorites": 43
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1WAPBzzEGm",
+      "bvid": "BV1WAPBzzEGm",
+      "title": "[SUNO V5] 达坂城的姑娘 (原唱: 蒋大为)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1WAPBzzEGm",
+      "cover": "https://i2.hdslb.com/bfs/archive/46470705840f39c3eb0374146c299fe867bf093d.jpg",
+      "description": "大量怪叫发生中",
+      "duration": 229,
+      "publishedAt": "2026-03-09T23:00:00.000Z",
+      "stats": {
+        "views": 4758,
+        "danmaku": 2,
+        "favorites": 54
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "天花板上吊着猫 · Suno 实验",
+      "playlistId": "ceiling-cat-suno",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1ZUNMzJEfJ",
+      "bvid": "BV1ZUNMzJEfJ",
+      "title": "[SUNO V5] Love Like This ambient pop cover (原唱: 藤井风)",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1ZUNMzJEfJ",
+      "cover": "https://i2.hdslb.com/bfs/archive/be2c6a38c6b3dfb850d91189b6137437d736a585.jpg",
+      "description": "也妹怎么改",
+      "duration": 256,
+      "publishedAt": "2026-03-13T09:00:00.000Z",
+      "stats": {
+        "views": 4462,
+        "danmaku": 0,
+        "favorites": 54
       },
       "tags": [
         "Suno"
@@ -807,7 +874,7 @@
       "duration": 256,
       "publishedAt": "2026-05-07T20:00:00.000Z",
       "stats": {
-        "views": 4278,
+        "views": 4281,
         "danmaku": 1,
         "favorites": 59
       },
@@ -876,7 +943,7 @@
       "duration": 280,
       "publishedAt": "2026-03-30T20:00:00.000Z",
       "stats": {
-        "views": 4137,
+        "views": 4138,
         "danmaku": 0,
         "favorites": 49
       },
@@ -899,7 +966,7 @@
       "duration": 260,
       "publishedAt": "2026-04-27T19:00:00.000Z",
       "stats": {
-        "views": 3989,
+        "views": 3990,
         "danmaku": 2,
         "favorites": 89
       },
@@ -991,7 +1058,7 @@
       "duration": 282,
       "publishedAt": "2026-04-15T11:00:00.000Z",
       "stats": {
-        "views": 3472,
+        "views": 3474,
         "danmaku": 0,
         "favorites": 53
       },
@@ -1037,7 +1104,7 @@
       "duration": 243,
       "publishedAt": "2026-04-18T02:00:00.000Z",
       "stats": {
-        "views": 3333,
+        "views": 3335,
         "danmaku": 0,
         "favorites": 54
       },
@@ -1060,7 +1127,7 @@
       "duration": 210,
       "publishedAt": "2026-05-03T11:00:00.000Z",
       "stats": {
-        "views": 3292,
+        "views": 3293,
         "danmaku": 0,
         "favorites": 50
       },
@@ -1083,7 +1150,7 @@
       "duration": 250,
       "publishedAt": "2026-05-17T03:00:00.000Z",
       "stats": {
-        "views": 2629,
+        "views": 2631,
         "danmaku": 0,
         "favorites": 71
       },
@@ -1106,7 +1173,7 @@
       "duration": 223,
       "publishedAt": "2026-04-30T21:00:00.000Z",
       "stats": {
-        "views": 2373,
+        "views": 2375,
         "danmaku": 0,
         "favorites": 25
       },
@@ -1115,29 +1182,6 @@
       ],
       "playlist": "天花板上吊着猫 · Suno 实验",
       "playlistId": "ceiling-cat-suno",
-      "source": "bilibili-view"
-    },
-    {
-      "id": "BV1z25E69EWB",
-      "bvid": "BV1z25E69EWB",
-      "title": "【SUNO】老歌翻新-浏阳河 电子民谣风格编曲",
-      "author": "黑蓝墨水就爱搞事儿",
-      "authorUrl": "https://space.bilibili.com/314203971",
-      "url": "https://www.bilibili.com/video/BV1z25E69EWB",
-      "cover": "https://i0.hdslb.com/bfs/archive/aebe9944aae5387fde567980a64fec4bb405f15b.jpg",
-      "description": "如有侵权，联系下架\n这首歌由@silences.  下单",
-      "duration": 261,
-      "publishedAt": "2026-05-21T07:00:00.000Z",
-      "stats": {
-        "views": 2214,
-        "danmaku": 0,
-        "favorites": 62
-      },
-      "tags": [
-        "Suno"
-      ],
-      "playlist": "黑蓝墨水就爱搞事儿 · 老歌翻新",
-      "playlistId": "blackblue-remix",
       "source": "bilibili-view"
     },
     {
@@ -1152,9 +1196,9 @@
       "duration": 213,
       "publishedAt": "2026-05-25T20:00:00.000Z",
       "stats": {
-        "views": 1801,
+        "views": 1803,
         "danmaku": 0,
-        "favorites": 33
+        "favorites": 34
       },
       "tags": [
         "Suno"
@@ -1175,7 +1219,7 @@
       "duration": 242,
       "publishedAt": "2026-05-27T18:00:00.000Z",
       "stats": {
-        "views": 1745,
+        "views": 1747,
         "danmaku": 0,
         "favorites": 35
       },
@@ -1221,7 +1265,7 @@
       "duration": 229,
       "publishedAt": "2026-05-18T22:00:00.000Z",
       "stats": {
-        "views": 1498,
+        "views": 1500,
         "danmaku": 0,
         "favorites": 21
       },
@@ -1244,7 +1288,7 @@
       "duration": 140,
       "publishedAt": "2026-05-20T19:00:00.000Z",
       "stats": {
-        "views": 1460,
+        "views": 1461,
         "danmaku": 0,
         "favorites": 10
       },
