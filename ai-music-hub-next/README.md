@@ -1,6 +1,6 @@
 # AI Music Hub Next
 
-基于 Next.js App Router 的 B 站 Suno / AI 音乐聚合播放站点。页面内置作品库、歌单筛选、搜索、排序、Bilibili 播放、打开原链接和复制链接。
+基于 Next.js App Router 的 B 站 Suno / AI 音乐聚合播放站点。页面聚焦 UP 主、歌单、单曲和站内播放详情。
 
 ## 使用
 
@@ -17,7 +17,14 @@ npm run dev
 npm run collect
 ```
 
-采集脚本会通过 Bilibili 公开视频和空间接口刷新 `data/catalog.json`。如果搜索接口被限流，脚本仍会用审核过的 BVID 和 UP 空间路径产出曲库。
+采集脚本会通过 Bilibili 公开视频、空间接口和审核过的高质量 BVID 种子刷新 `data/catalog.json`。如果搜索或空间接口被限流，脚本仍会保留人审种子曲库。
+
+数据收集策略参考了 GitHub 上的开源 B 站采集项目：
+
+- `simon300000/bili-api`：参考 UP archive 遍历和视频元数据归一化模型。
+- `BiliBiliApi/BiliBiliApi`：参考公开接口路由约定。
+
+没有把这些包直接加入生产依赖，因为现有 npm 采集包会带来不可自动修复的依赖审计风险。当前实现保留零新增生产漏洞，并在脚本里使用更严格的作品过滤和播放量质量线。
 
 ## 说明
 

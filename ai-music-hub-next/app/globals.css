@@ -314,6 +314,8 @@ h1 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
+  max-height: 198px;
+  overflow: auto;
 }
 
 .authorChip {

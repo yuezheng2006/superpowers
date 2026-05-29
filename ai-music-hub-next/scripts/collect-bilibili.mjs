@@ -3,6 +3,20 @@ import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 
 const outFile = resolve(new URL("../data/catalog.json", import.meta.url).pathname);
+
+const collectorReferences = [
+  {
+    name: "simon300000/bili-api",
+    url: "https://github.com/simon300000/bili-api",
+    usage: "Reviewed its open-source collector model for UP archive traversal and video metadata normalization."
+  },
+  {
+    name: "BiliBiliApi/BiliBiliApi",
+    url: "https://github.com/BiliBiliApi/BiliBiliApi",
+    usage: "Reviewed its public Bilibili API routing conventions; kept this project dependency-free because npm crawler packages currently add audit risk."
+  }
+];
+
 const searches = [
   { keyword: "Suno AI 原创歌曲", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
   { keyword: "Suno AI 改编", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
@@ -12,16 +26,40 @@ const searches = [
 const seedVideos = [
   { bvid: "BV14RqeBPEPU", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
   { bvid: "BV1osAVzWEmM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1X8sszKEHD", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV19vsQz2EG9", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1BJS6BvERx", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
   { bvid: "BV1z25E69EWB", playlist: "黑蓝墨水就爱搞事儿 · 老歌翻新", playlistId: "blackblue-remix" },
   { bvid: "BV1J2vXBvE3i", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
+  { bvid: "BV1oKiwBXEaP", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
+  { bvid: "BV16oiyBUEeN", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
+  { bvid: "BV1ho2aB4Exn", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1K32vBdED3", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1nzm7BiEqj", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1SPmuBtEoc", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1X5BxBpEqY", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1b1BBBSEiR", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1zz2XB8EtG", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1JLzQBrEpN", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV1Cji5BvEaL", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel" },
+  { bvid: "BV16nshziEQw", playlist: "夏火ww · R&B 改编", playlistId: "xiahuo-rnb" },
+  { bvid: "BV17iDCBLEtW", playlist: "复利大叔 · 星神二创曲", playlistId: "fuli-starrail" },
+  { bvid: "BV1DzDxBJET2", playlist: "复利大叔 · 星神二创曲", playlistId: "fuli-starrail" },
+  { bvid: "BV15dDSBdEur", playlist: "八十万刁民总教头 · AI 翻唱", playlistId: "chief-ai-cover" },
+  { bvid: "BV1ipCgB8Enx", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
   { bvid: "BV1CD421A7Nc", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
-  { bvid: "BV1fr421t7zz", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
+  { bvid: "BV1fr421t7zz", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  { bvid: "BV16x4y1m7Vy", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  { bvid: "BV1Lz421o7MJ", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
 ];
 
 const upSpaces = [
   { mid: "1091", name: "天花板上吊着猫", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno", keywords: ["Suno", "AI音乐", "AI 音乐"] },
   { mid: "314203971", name: "黑蓝墨水就爱搞事儿", playlist: "黑蓝墨水就爱搞事儿 · 老歌翻新", playlistId: "blackblue-remix", keywords: ["Suno", "AI音乐"] },
-  { mid: "15687479", name: "所长bibabo", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style", keywords: ["Suno", "AI音乐"] }
+  { mid: "15687479", name: "所长bibabo", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style", keywords: ["Suno", "AI音乐"] },
+  { mid: "3546657844595574", name: "阿德托昆博带件衣服", playlist: "阿德托昆博 · 黑人福音", playlistId: "adeto-gospel", keywords: ["Suno", "黑人福音"] },
+  { mid: "3546682457533247", name: "夏火ww", playlist: "夏火ww · R&B 改编", playlistId: "xiahuo-rnb", keywords: ["Suno", "R&B", "AI改编"] },
+  { mid: "5104808", name: "复利大叔", playlist: "复利大叔 · 星神二创曲", playlistId: "fuli-starrail", keywords: ["suno", "AI音乐", "星神二创曲"] }
 ];
 
 const playlistPlans = [
@@ -48,6 +86,38 @@ const playlistPlans = [
     summary: "突出风格迁移、声部编排和热门作品再创作的 Suno 歌单。",
     status: "已上线",
     plan: "补齐更多风格实验作品，并增加提示词/风格标签。"
+  },
+  {
+    id: "adeto-gospel",
+    name: "阿德托昆博 · 黑人福音",
+    curator: "阿德托昆博带件衣服",
+    summary: "高播放黑人福音、R&B、Soul 改编方向，适合做风格示范歌单。",
+    status: "已上线",
+    plan: "继续沿 UP 主更新节奏补充高收藏版本，并按 Gospel / R&B / Soul 拆分。"
+  },
+  {
+    id: "xiahuo-rnb",
+    name: "夏火ww · R&B 改编",
+    curator: "夏火ww",
+    summary: "站内传播度高的中文流行 R&B 改编作品。",
+    status: "已上线",
+    plan: "从播放量和收藏量双维度补齐该 UP 的 R&B 改编系列。"
+  },
+  {
+    id: "fuli-starrail",
+    name: "复利大叔 · 星神二创曲",
+    curator: "复利大叔",
+    summary: "围绕游戏叙事和角色世界观创作的高完成度 AI 音乐。",
+    status: "已上线",
+    plan: "优先收录完整歌曲，剔除纯剧情解析和非音乐内容。"
+  },
+  {
+    id: "chief-ai-cover",
+    name: "八十万刁民总教头 · AI 翻唱",
+    curator: "八十万刁民总教头",
+    summary: "高播放 AI 翻唱与黑人声线改编作品。",
+    status: "已上线",
+    plan: "按播放和收藏补齐热门翻唱，保留版权提示清晰的条目。"
   },
   {
     id: "bilibili-ai-music-picks",
@@ -87,7 +157,13 @@ function inferTags(title = "", description = "") {
 
 function isMusicWork(title = "", description = "") {
   const text = `${title} ${description}`.toLowerCase();
-  return !/教程|教学|课程|入门|零基础|提示词|保姆级|手把手|使用教程/i.test(text);
+  const negative = /教程|教学|课程|入门|零基础|提示词|保姆级|手把手|使用教程|开箱|到手|耳机|airpods|攻略|登录|账号|变现|全流程干货|工具|iphone|ipad|op-1|合成器|科普|听写神器|上手/i;
+  const positive = /suno|ai音乐|ai 音乐|ai翻唱|ai 翻唱|ai改编|ai 改编|原创ai|原创 ai|suno音乐|cover|翻唱|黑人福音|r&b|soul|citypop|neo soul|曲：suno|powered by suno/i;
+  return positive.test(text) && !negative.test(text);
+}
+
+function passesQualityBar(item) {
+  return Number(item?.stats?.views || 0) >= 1000;
 }
 
 function normalizeSearchItem(item, seed) {
@@ -278,9 +354,10 @@ async function main() {
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    source: "Bilibili public web APIs",
+    source: "Bilibili public web APIs + GitHub open-source collector references",
+    collectorReferences,
     playlists: playlistPlans,
-    items: dedupe(collected)
+    items: dedupe(collected).filter((item) => isMusicWork(item.title, item.description) && passesQualityBar(item))
   };
 
   await mkdir(dirname(outFile), { recursive: true });
