@@ -103,8 +103,8 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
     <main className="desktopShell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">Bilibili Suno Radar</p>
           <h1>AI Music Hub</h1>
+          <p className="subtitle">{authors.length} UP · {playlists.length} 歌单 · {tracks.length} 单曲</p>
         </div>
         <form className="search" onSubmit={submitSearch}>
           <Search aria-hidden="true" size={18} />
@@ -115,37 +115,18 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
               setQuery(event.target.value);
             }}
             type="search"
-            placeholder="搜索歌曲、UP、标签"
+            placeholder="搜索"
             aria-label="搜索歌曲、UP、标签"
           />
-          <button type="submit">搜索</button>
         </form>
       </header>
-
-      <section className="summaryStrip" aria-label="曲库概览">
-        <div>
-          <span>UP 主</span>
-          <strong>{authors.length}</strong>
-        </div>
-        <div>
-          <span>歌单</span>
-          <strong>{playlists.length}</strong>
-        </div>
-        <div>
-          <span>单曲</span>
-          <strong>{tracks.length}</strong>
-        </div>
-      </section>
 
       <div className="desktopWorkspace">
         <div className="sideStack">
           <section className="compactSection" aria-label="UP 主">
-            <div className="sectionHead">
-              <h2>UP 主</h2>
-            </div>
+            <h2 className="sideTitle">UP 主</h2>
             <div className="authorRail">
               <button type="button" className="authorChip" aria-pressed={author === "all"} onClick={() => setAuthor("all")}>
-                <UserRound aria-hidden="true" size={15} />
                 全部
                 <span>{tracks.length}</span>
               </button>
@@ -157,7 +138,6 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                   key={item.name}
                   onClick={() => setAuthor(item.name)}
                 >
-                  <UserRound aria-hidden="true" size={15} />
                   {item.name}
                   <span>{item.count}</span>
                 </button>
@@ -166,17 +146,11 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
           </section>
 
           <section className="compactSection sidePlaylists" aria-label="歌单">
-            <div className="sectionHead">
-              <h2>歌单</h2>
-            </div>
+            <h2 className="sideTitle">歌单</h2>
             <div className="playlistCards">
               <button className="playlistCard" type="button" aria-pressed={playlistId === "all"} onClick={() => setPlaylistId("all")}>
-                <span className="playlistStatus">全部</span>
                 <h3>全部推荐</h3>
-                <div className="playlistMeta">
-                  <span>AI Music Hub</span>
-                  <span>{tracks.length} 首</span>
-                </div>
+                <span className="playlistCount">{tracks.length} 首</span>
               </button>
             {playlists.map((playlist) => (
               <button
@@ -186,12 +160,8 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                 aria-pressed={playlist.id === playlistId}
                 onClick={() => setPlaylistId(playlist.id)}
               >
-                <span className="playlistStatus">{playlist.status}</span>
                 <h3>{playlist.name}</h3>
-                <div className="playlistMeta">
-                  <span>{playlist.curator}</span>
-                  <span>{playlistCount(playlist.id)} 首</span>
-                </div>
+                <span className="playlistCount">{playlistCount(playlist.id)} 首</span>
               </button>
             ))}
             </div>
@@ -201,7 +171,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         <section className="compactSection trackPane">
           <div className="sectionHead">
             <h2>单曲</h2>
-            <p>{filtered.length} / {tracks.length}</p>
+            <p>{filtered.length} 首</p>
           </div>
           {filtered.length ? (
             <div className="grid">
@@ -211,7 +181,6 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                     {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
                     <span className="playBadge">
                       <Play aria-hidden="true" size={13} />
-                      播放
                     </span>
                   </Link>
                   <div className="trackBody">
@@ -219,19 +188,15 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                       <Link href={`/tracks/${track.id}`}>{track.title}</Link>
                     </h3>
                     <div className="trackFoot">
-                      <span>
-                        <Music2 aria-hidden="true" size={13} />
-                        {track.author}
-                      </span>
+                      <span>{track.author}</span>
                       <span>{formatDuration(track.duration)}</span>
-                      <span>{formatNumber(track.stats?.views)} 播放</span>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
           ) : (
-            <div className="empty">没有匹配的作品。可以换一个关键词，或切换到全部推荐歌单。</div>
+            <div className="empty">没有匹配的作品</div>
           )}
         </section>
       </div>

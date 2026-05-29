@@ -61,7 +61,7 @@ main {
   justify-content: space-between;
   gap: 24px;
   margin: 0 calc(clamp(16px, 3vw, 44px) * -1);
-  padding: 10px clamp(16px, 3vw, 44px);
+  padding: 12px clamp(16px, 3vw, 44px);
   background: rgba(14, 17, 16, 0.94);
   border-bottom: 1px solid var(--line);
 }
@@ -84,16 +84,22 @@ p {
 }
 
 h1 {
-  margin-bottom: 0;
-  font-size: clamp(22px, 2.6vw, 30px);
+  margin-bottom: 4px;
+  font-size: clamp(20px, 2.2vw, 26px);
   line-height: 1;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .search {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  min-width: min(440px, 48vw);
+  min-width: min(360px, 42vw);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -101,7 +107,7 @@ h1 {
 }
 
 .search svg {
-  margin-left: 13px;
+  margin-left: 12px;
   color: var(--muted);
 }
 
@@ -112,7 +118,7 @@ h1 {
   background: transparent;
   border: 0;
   outline: 0;
-  padding: 10px 12px;
+  padding: 9px 12px;
 }
 
 .search button,
@@ -123,13 +129,7 @@ h1 {
 }
 
 .search button {
-  align-self: stretch;
-  border: 0;
-  border-left: 1px solid var(--line);
-  background: var(--accent);
-  color: #061815;
-  font-weight: 800;
-  padding: 0 18px;
+  display: none;
 }
 
 .playerShell {
@@ -152,49 +152,20 @@ h1 {
 }
 
 .summaryStrip {
-  display: grid;
-  flex: 0 0 auto;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  overflow: hidden;
-  margin: 12px 0 4px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--line);
-}
-
-.summaryStrip div {
-  display: flex;
-  min-height: 44px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 8px 14px;
-  background: linear-gradient(180deg, #19201c, #141816);
-}
-
-.summaryStrip span {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.summaryStrip strong {
-  color: var(--text);
-  font-size: 22px;
-  line-height: 1;
+  display: none;
 }
 
 .compactSection {
   min-height: 0;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .desktopWorkspace {
   display: grid;
   flex: 1 1 auto;
   min-height: 0;
-  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
-  gap: 14px;
+  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  gap: 16px;
 }
 
 .sideStack,
@@ -205,12 +176,18 @@ h1 {
 .sideStack {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 .sidePlaylists {
   display: flex;
   flex-direction: column;
+}
+
+.sideTitle {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .heroCopy h2 {
@@ -242,23 +219,23 @@ h1 {
 .playlistCards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
+  gap: 6px;
   min-height: 0;
   overflow: auto;
   padding-right: 2px;
 }
 
 .playlistCard {
-  display: grid;
-  min-height: 48px;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 4px 8px;
+  display: flex;
+  min-height: 40px;
   align-items: center;
-  padding: 8px 10px;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
   color: var(--text);
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   text-align: left;
 }
@@ -273,7 +250,8 @@ h1 {
   min-width: 0;
   margin-bottom: 0;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 600;
   line-height: 1.3;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
@@ -286,14 +264,7 @@ h1 {
 }
 
 .playlistStatus {
-  align-self: center;
-  width: fit-content;
-  border: 1px solid rgba(231, 196, 90, 0.35);
-  border-radius: 6px;
-  color: var(--accent-3);
-  padding: 2px 7px;
-  font-size: 11px;
-  font-weight: 800;
+  display: none;
 }
 
 .playlistMeta,
@@ -310,11 +281,17 @@ h1 {
   margin-top: 0;
 }
 
+.playlistCount {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .authorRail {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
-  max-height: 198px;
+  gap: 6px;
+  max-height: 180px;
   overflow: auto;
 }
 
@@ -323,13 +300,14 @@ h1 {
   min-height: 32px;
   align-items: center;
   justify-content: space-between;
-  gap: 7px;
+  gap: 8px;
   color: var(--text);
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   padding: 0 10px;
+  font-size: 13px;
 }
 
 .authorChip[aria-pressed="true"] {
@@ -509,12 +487,13 @@ select {
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 
 .sectionHead h2 {
   margin-bottom: 0;
-  font-size: 17px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .sectionHead p {
@@ -525,8 +504,8 @@ select {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  max-height: calc(100vh - 176px);
+  gap: 10px;
+  max-height: calc(100vh - 140px);
   overflow: auto;
   padding-right: 2px;
 }
@@ -542,7 +521,7 @@ select {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 8.6;
+  aspect-ratio: 16 / 9;
   padding: 0;
   overflow: hidden;
   background: linear-gradient(135deg, #182325, #382c22);
@@ -563,17 +542,16 @@ select {
   bottom: 8px;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  border-radius: 999px;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   background: rgba(0, 0, 0, 0.72);
-  padding: 5px 8px;
   color: #fff;
-  font-size: 12px;
-  font-weight: 800;
 }
 
 .trackBody {
-  padding: 9px;
+  padding: 10px;
 }
 
 .trackTags {
@@ -594,10 +572,11 @@ select {
 
 .trackCard h3 {
   display: -webkit-box;
-  min-height: 38px;
+  min-height: 36px;
   margin-bottom: 8px;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 600;
   line-height: 1.35;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -639,10 +618,11 @@ select {
 }
 
 .empty {
-  padding: 36px;
+  padding: 32px;
   color: var(--muted);
   border: 1px dashed var(--line);
   border-radius: 8px;
+  text-align: center;
 }
 
 .detailTopbar {
