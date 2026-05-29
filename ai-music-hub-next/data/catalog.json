@@ -1,0 +1,506 @@
+{
+  "generatedAt": "2026-05-29T03:53:56.094Z",
+  "source": "Bilibili public web APIs",
+  "items": [
+    {
+      "id": "BV16MCMBwEhX",
+      "bvid": "BV16MCMBwEhX",
+      "title": "【最强AI音乐Suno全108集】目前B站最完整的Suno使用教程！零基础精通Suno，人人都能做音乐。",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV16MCMBwEhX",
+      "cover": "https://i2.hdslb.com/bfs/archive/58842cfb175c6109f1e1f9f01a07e2b9491a310b.jpg",
+      "description": "",
+      "duration": 19287,
+      "publishedAt": "2025-11-14T12:46:00.000Z",
+      "stats": {
+        "views": 159173,
+        "danmaku": 148,
+        "favorites": 9513
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1CD421A7Nc",
+      "bvid": "BV1CD421A7Nc",
+      "title": "【Suno】不懂我如",
+      "author": "没事卡了",
+      "authorUrl": "https://space.bilibili.com/426296065",
+      "url": "https://www.bilibili.com/video/BV1CD421A7Nc",
+      "cover": "https://i2.hdslb.com/bfs/archive/33a8e98a6c1b917591d63c0fd0804e979aa1dad0.jpg",
+      "description": "",
+      "duration": 141,
+      "publishedAt": "2024-05-17T13:14:33.000Z",
+      "stats": {
+        "views": 103537,
+        "danmaku": 88,
+        "favorites": 157
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "原创歌曲",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1CaXzBEEtS",
+      "bvid": "BV1CaXzBEEtS",
+      "title": "【2026最新版SUNO教学】suno V5.5使用教程！无需梯子，免费用。原生中文，花了一周时间整理的SUNO零基础入门教程！（附超详情AI音乐教程）",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1CaXzBEEtS",
+      "cover": "https://i0.hdslb.com/bfs/archive/56d679260a7869bd410f42cfe1849399237bfddd.jpg",
+      "description": "",
+      "duration": 12739,
+      "publishedAt": "2026-03-31T16:00:00.000Z",
+      "stats": {
+        "views": 54186,
+        "danmaku": 63,
+        "favorites": 2953
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1Qb1eB8Egn",
+      "bvid": "BV1Qb1eB8Egn",
+      "title": "【全网最全Suno教程完整版108集】一站式入门Suno-AI音乐，零基础入门到精通！创作AI音乐MV的完整工作流｜新手必看！打造属于自己专属音乐",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1Qb1eB8Egn",
+      "cover": "https://i0.hdslb.com/bfs/archive/a8920d6e44a6c6fc3249a90c000963dfcd8eb656.jpg",
+      "description": "视频相关资源汇总，含视频中提到的魔法，提示词，进阶视频教程，高级教程。请粉丝+三连后，发送“魔法”。\n\nUp还有别的工作，不一定会秒回，但是看见了都会回复，谢谢！\n\n未完 ~ ~ ~",
+      "duration": 3048,
+      "publishedAt": "2025-11-03T11:40:00.000Z",
+      "stats": {
+        "views": 44631,
+        "danmaku": 19,
+        "favorites": 2880
+      },
+      "tags": [
+        "Suno",
+        "MV",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1J2vXBvE3i",
+      "bvid": "BV1J2vXBvE3i",
+      "title": "【SUNO V5】单依纯 - 向日葵朝着夜 黑人福音 B站跨晚版",
+      "author": "所长bibabo",
+      "authorUrl": "https://space.bilibili.com/15687479",
+      "url": "https://www.bilibili.com/video/BV1J2vXBvE3i",
+      "cover": "https://i2.hdslb.com/bfs/archive/a32f619ec64d7c761fe04b49f9bee1d0b17a048a.jpg",
+      "description": "哈哈大家新年好，我没有被盗号，主要是单依纯 B站跨晚版本的《向日葵朝着夜》太好听了。试着用 SUNO V5 制作了黑人福音版本，发现转调和歌词意境非常适合这首歌。\n大家都去听单依纯的2专《纯妹妹》！！\n顺便把提示词放在这里，大家可以自己尝试。\nBlack Male Gospel Vocal, Deep And Warm Tone.\nMinimalist Intro With Sparse Piano And Soft Pad.\nGradually Building Arrangement: Choir Layers, Hand Claps, Organ, And Emotional Swell.\nPowerful, Soulful, Uplifting Gospel Atmosphere.\nStrong Dynamic Growth From Intimate Opening To Full, Rich Climax.",
+      "duration": 216,
+      "publishedAt": "2026-01-01T15:22:28.000Z",
+      "stats": {
+        "views": 26581,
+        "danmaku": 52,
+        "favorites": 912
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "Suno 改编",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1wuiyBQEdi",
+      "bvid": "BV1wuiyBQEdi",
+      "title": "【全41集】目前B站最全最细的（Suno AI音乐）全教程！手把手教你用suno玩转AI音乐~存下吧！别再自己走弯路了。",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1wuiyBQEdi",
+      "cover": "https://i0.hdslb.com/bfs/archive/4a45b88a7eb62f2fa8511fe4034000835a2ca35b.jpg",
+      "description": "视频相关资源汇总，含视频中提到的魔法，提示词，籽料等请粉丝+三连后，fa颂“魔法”三连。\n\nUp还有别的工作，不一定会秒回，但是看见了都会回复，谢谢！",
+      "duration": 24070,
+      "publishedAt": "2026-01-07T13:15:00.000Z",
+      "stats": {
+        "views": 22710,
+        "danmaku": 3,
+        "favorites": 1737
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "创作教程",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV14RqeBPEPU",
+      "bvid": "BV14RqeBPEPU",
+      "title": "[SUNO V5] 废片 03: 爱情买卖: 什么？你说ai不会换气？",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV14RqeBPEPU",
+      "cover": "https://i1.hdslb.com/bfs/archive/94491cc02c46c968e08b0f403a0deacba8c07788.jpg",
+      "description": "😅",
+      "duration": 203,
+      "publishedAt": "2025-12-21T19:00:00.000Z",
+      "stats": {
+        "views": 22442,
+        "danmaku": 9,
+        "favorites": 46
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "需求参考 UP · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1Ex411F7EC",
+      "bvid": "BV1Ex411F7EC",
+      "title": "【LIVE】当红偶像紧急集合！第一届小指祭 全场中字",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1Ex411F7EC",
+      "cover": "https://i0.hdslb.com/bfs/archive/510bac4456987c820efa970fb27940a7a8df8bc2.png",
+      "description": "渣浪 热带音乐夜特别放送 指祭全场 前所未有的偶像大集合，台下基友们的偶像魂整个燃爆了！ 请慢慢欣赏~",
+      "duration": 5347,
+      "publishedAt": "2012-07-16T08:55:54.000Z",
+      "stats": {
+        "views": 20406,
+        "danmaku": 2116,
+        "favorites": 554
+      },
+      "tags": [
+        "AI Music"
+      ],
+      "playlist": "需求参考 UP · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1VNF5zjEDF",
+      "bvid": "BV1VNF5zjEDF",
+      "title": "【SUNO AI最强歌曲生成108集完整版】无需梯子，免费使用。原生中文！新手小白从零入门到精通（附3万+提示词）秒出歌，秒过审！永久使用！",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1VNF5zjEDF",
+      "cover": "https://i0.hdslb.com/bfs/archive/1cde6821548654d699f66d6513f3aaa419d4699c.jpg",
+      "description": "-",
+      "duration": 28178,
+      "publishedAt": "2026-02-03T12:05:00.000Z",
+      "stats": {
+        "views": 16504,
+        "danmaku": 8,
+        "favorites": 1066
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1TjwLzyEiP",
+      "bvid": "BV1TjwLzyEiP",
+      "title": "【最强AI音乐suno全268集】价值13980保姆级SUNO全系列教程！从0-1精通AI音乐创作（附提示词模版）",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1TjwLzyEiP",
+      "cover": "https://i1.hdslb.com/bfs/archive/866315bf8ae33b647891ab7226c240a6f9f9bd54.jpg",
+      "description": "",
+      "duration": 17771,
+      "publishedAt": "2026-03-16T07:29:31.000Z",
+      "stats": {
+        "views": 12270,
+        "danmaku": 14,
+        "favorites": 1157
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1rs9bYoEtk",
+      "bvid": "BV1rs9bYoEtk",
+      "title": "Suno Ai 保姆级教程 【第一期】天呐！我居然三分钟就复刻了罗生门follow！",
+      "author": "楠贤不是南弦",
+      "authorUrl": "https://space.bilibili.com/7776467",
+      "url": "https://www.bilibili.com/video/BV1rs9bYoEtk",
+      "cover": "https://i0.hdslb.com/bfs/archive/42eb919bf2cf341ae5e5c7c887139b857e32b67d.jpg",
+      "description": "这个系列可能是b站最细的保姆级 Suno AI 保姆级教学视频",
+      "duration": 1264,
+      "publishedAt": "2025-03-02T07:17:45.000Z",
+      "stats": {
+        "views": 11949,
+        "danmaku": 25,
+        "favorites": 579
+      },
+      "tags": [
+        "Suno",
+        "教程",
+        "改编"
+      ],
+      "playlist": "创作教程",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1UNwgeTER8",
+      "bvid": "BV1UNwgeTER8",
+      "title": "B站最简单的AI音乐创作教程！手把手教你0基础5分钟学会用AI写歌编曲-全网最好玩的天JIANG老师回归",
+      "author": "天JIANG",
+      "authorUrl": "https://space.bilibili.com/21143599",
+      "url": "https://www.bilibili.com/video/BV1UNwgeTER8",
+      "cover": "https://i2.hdslb.com/bfs/archive/f56bec426e9354b11c196cf6f1d528b2070326bf.jpg",
+      "description": "奶奶关注的UP主回归了，带着天JIANG老师独特的手把手0基础教学回来了！\n\n5分钟全方位学会目前最强的AI音乐创作软件——SUNO的使用，从作词到作曲，试着用AI给自己写一首歌吧！\n\n想象一下，博主利用 AI 创作音乐，轻松定制出契合自身风格的专属旋律，让每一次视频开场都能瞬间抓住观众的心；电商品牌借助 AI 创作出的独特音乐，在广告宣传中脱颖而出，为品牌形象增添别样光彩；专业编曲人通过 AI 获取全新的创作思路，突破创作瓶颈，为作品赋予更多元的魅力。AI未来还会持续给我们带来什么样的惊喜？\n\n——————————————\n天JIANG随堂练习素材永久免费，为了方便整理归档所有素材\n关注「天JIANG」公众号回复「SUNO」即可获取，还有高达500G的各种资源哦！",
+      "duration": 498,
+      "publishedAt": "2025-01-16T11:00:00.000Z",
+      "stats": {
+        "views": 8348,
+        "danmaku": 37,
+        "favorites": 334
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "创作教程",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1jNrWBaEXJ",
+      "bvid": "BV1jNrWBaEXJ",
+      "title": "【SUNO V5版本全教程】2026第一版最全最细的《AI音乐》全教程！手把手教你用SUNO创作音乐，玩转AI音乐~存下吧！别再自己走弯路了。",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1jNrWBaEXJ",
+      "cover": "https://i2.hdslb.com/bfs/archive/ad8ccd4b2df2b2589d0bf0e18061f6f00a67d3c9.jpg",
+      "description": "制作不易，大家记得点个关注SUNO资料包评论区获取\n制作不易，大家记得点个关注SUNO资料包评论区获取\n制作不易，大家记得点个关注SUNO资料包评论区获取\n\n记得一键三连呀【点赞、收藏、转发】感谢支持~\n记得一键三连呀【点赞、收藏、转发】感谢支持~\n记得一键三连呀【点赞、收藏、转发】感谢支持~",
+      "duration": 3179,
+      "publishedAt": "2026-01-14T13:15:00.000Z",
+      "stats": {
+        "views": 7898,
+        "danmaku": 10,
+        "favorites": 458
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1jfkfBKE2r",
+      "bvid": "BV1jfkfBKE2r",
+      "title": "【全网最全Suno教程进阶版108集】一站式入门Suno-AI音乐，零基础入门到精通！创作AI音乐MV的完整工作流｜新手必看！打造属于自己专属音乐",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1jfkfBKE2r",
+      "cover": "https://i2.hdslb.com/bfs/archive/b2536fd768e7d084486afa32a298b8f438d2f180.jpg",
+      "description": "AI音乐必备工具、工作流、提示词、智能体、GEMINI模型、变县指南、文档都整理好啦 有需要 平 777 抱走把",
+      "duration": 7451,
+      "publishedAt": "2025-11-10T11:40:00.000Z",
+      "stats": {
+        "views": 6306,
+        "danmaku": 5,
+        "favorites": 414
+      },
+      "tags": [
+        "Suno",
+        "MV",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1BefbBfEQ1",
+      "bvid": "BV1BefbBfEQ1",
+      "title": "【suno正版ai音乐】2026全网最全最详细的suno使用教程，一键爬梯，永久使用，新手必看，suno使用教程！",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1BefbBfEQ1",
+      "cover": "https://i1.hdslb.com/bfs/archive/bb316f5541f263cc482ae1bb029fe4bd38e546ca.jpg",
+      "description": "",
+      "duration": 2517,
+      "publishedAt": "2026-02-25T12:28:00.000Z",
+      "stats": {
+        "views": 4490,
+        "danmaku": 0,
+        "favorites": 305
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1cCi4BvEci",
+      "bvid": "BV1cCi4BvEci",
+      "title": "新生代最强suno新功能Persona王炸更新来了！人声音乐固定功能更加简单，轻松稿定！！",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1cCi4BvEci",
+      "cover": "https://i0.hdslb.com/bfs/archive/bbd129426bb75528c257c133c49a9465e93d8318.jpg",
+      "description": "",
+      "duration": 349,
+      "publishedAt": "2026-01-05T11:06:42.000Z",
+      "stats": {
+        "views": 3649,
+        "danmaku": 4,
+        "favorites": 215
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1osAVzWEmM",
+      "bvid": "BV1osAVzWEmM",
+      "title": "[SUNO V5] 用周杰伦新专预告片的配乐，让AI作一首曲子的话...?",
+      "author": "天花板上吊着猫",
+      "authorUrl": "https://space.bilibili.com/1091",
+      "url": "https://www.bilibili.com/video/BV1osAVzWEmM",
+      "cover": "https://i1.hdslb.com/bfs/archive/7da5a1543cefb885cc5de637b0b78a21e8de102f.jpg",
+      "description": "随橙想呢做完了再听几遍，反耳感觉越听越普通...",
+      "duration": 169,
+      "publishedAt": "2026-03-24T17:10:00.000Z",
+      "stats": {
+        "views": 3473,
+        "danmaku": 0,
+        "favorites": 24
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "需求参考 UP · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1HBPpz8EtQ",
+      "bvid": "BV1HBPpz8EtQ",
+      "title": "【全268集】目前B站最全最细的《ai音乐》全教程！手把手教你用suno玩转AI音乐~存下吧！别再自己走弯路了。",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1HBPpz8EtQ",
+      "cover": "https://i0.hdslb.com/bfs/archive/60e87ad5a2bb6bad97e4acfa5242b371cdbaa247.jpg",
+      "description": "",
+      "duration": 3662,
+      "publishedAt": "2026-03-07T11:20:00.000Z",
+      "stats": {
+        "views": 3319,
+        "danmaku": 1,
+        "favorites": 209
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1z25E69EWB",
+      "bvid": "BV1z25E69EWB",
+      "title": "【SUNO】老歌翻新-浏阳河 电子民谣风格编曲",
+      "author": "黑蓝墨水就爱搞事儿",
+      "authorUrl": "https://space.bilibili.com/314203971",
+      "url": "https://www.bilibili.com/video/BV1z25E69EWB",
+      "cover": "https://i0.hdslb.com/bfs/archive/aebe9944aae5387fde567980a64fec4bb405f15b.jpg",
+      "description": "如有侵权，联系下架\n这首歌由@silences.  下单",
+      "duration": 261,
+      "publishedAt": "2026-05-21T07:00:00.000Z",
+      "stats": {
+        "views": 2189,
+        "danmaku": 0,
+        "favorites": 62
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "Suno 改编",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1fd9hB9EiV",
+      "bvid": "BV1fd9hB9EiV",
+      "title": "【suno V5.5最新官方教程】2026最新版全面支持中文+Win+Mac+全套提示词可带走（附超详情AI音乐教程） 新手入门首选",
+      "author": "Suno教学",
+      "authorUrl": "https://space.bilibili.com/356809114",
+      "url": "https://www.bilibili.com/video/BV1fd9hB9EiV",
+      "cover": "https://i1.hdslb.com/bfs/archive/087c2248d7f68a905729541ac46e93d791fde2b0.jpg",
+      "description": "",
+      "duration": 5289,
+      "publishedAt": "2026-05-02T12:54:00.000Z",
+      "stats": {
+        "views": 2079,
+        "danmaku": 1,
+        "favorites": 104
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "Suno教学 · UP 收录",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1PAm2B9Ei3",
+      "bvid": "BV1PAm2B9Ei3",
+      "title": "目前B站最完整最强Suno-AI音乐喂饭级教程！零基础入门到精通（新手入门实用版）！全程干货无废话！人人都能做音乐~！",
+      "author": "奈米爱吃糖",
+      "authorUrl": "https://space.bilibili.com/3546886759778597",
+      "url": "https://www.bilibili.com/video/BV1PAm2B9Ei3",
+      "cover": "https://i0.hdslb.com/bfs/archive/db9023994659ad322d89578a0bef2b7350372b6a.jpg",
+      "description": "",
+      "duration": 22107,
+      "publishedAt": "2025-12-15T09:02:23.000Z",
+      "stats": {
+        "views": 1101,
+        "danmaku": 1,
+        "favorites": 70
+      },
+      "tags": [
+        "Suno",
+        "教程"
+      ],
+      "playlist": "创作教程",
+      "source": "bilibili-view"
+    },
+    {
+      "id": "BV1fr421t7zz",
+      "bvid": "BV1fr421t7zz",
+      "title": "SUNO初体验！用B站热搜排行榜创作一首歌是什么样的？",
+      "author": "胡萝卜音乐",
+      "authorUrl": "https://space.bilibili.com/11217903",
+      "url": "https://www.bilibili.com/video/BV1fr421t7zz",
+      "cover": "https://i2.hdslb.com/bfs/archive/b149acdc1307f71325939fd9487cab1d8bb7c88b.jpg",
+      "description": "通过SUNO，使用今日（3.31）B站热搜排行榜作为歌词生成一首歌，感觉如何？",
+      "duration": 117,
+      "publishedAt": "2024-03-31T10:45:20.000Z",
+      "stats": {
+        "views": 323,
+        "danmaku": 0,
+        "favorites": 1
+      },
+      "tags": [
+        "Suno"
+      ],
+      "playlist": "创作实验",
+      "source": "bilibili-view"
+    }
+  ]
+}
