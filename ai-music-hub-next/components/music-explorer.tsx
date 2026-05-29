@@ -2,6 +2,7 @@
 
 import { Clipboard, ExternalLink, Play, Search } from "lucide-react";
 import { FormEvent, useMemo, useState } from "react";
+import { UniversalPlayer } from "./universal-player";
 
 export type Track = {
   id: string;
@@ -47,10 +48,6 @@ function formatDuration(seconds = 0) {
 function formatDate(value?: string) {
   if (!value) return "未知时间";
   return new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium" }).format(new Date(value));
-}
-
-function embedUrl(track: Track) {
-  return `https://player.bilibili.com/player.html?bvid=${encodeURIComponent(track.bvid)}&page=1&high_quality=1`;
 }
 
 export function MusicExplorer({ catalog }: { catalog: Catalog }) {
@@ -154,12 +151,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
             </div>
           </div>
           <div className="embedWrap">
-            <iframe
-              title="Bilibili player"
-              src={embedUrl(active)}
-              allowFullScreen
-              sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
-            />
+            <UniversalPlayer title={active.title} url={active.url} bvid={active.bvid} />
           </div>
         </section>
       ) : null}
