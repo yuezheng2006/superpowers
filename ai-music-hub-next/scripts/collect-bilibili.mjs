@@ -4,27 +4,59 @@ import { dirname, resolve } from "node:path";
 
 const outFile = resolve(new URL("../data/catalog.json", import.meta.url).pathname);
 const searches = [
-  { keyword: "Suno AI 音乐", playlist: "Suno 精选" },
-  { keyword: "Suno AI 原创歌曲", playlist: "原创歌曲" },
-  { keyword: "AI 音乐 MV Suno", playlist: "AI MV" },
-  { keyword: "Suno 教程 AI音乐", playlist: "创作教程" }
+  { keyword: "Suno AI 原创歌曲", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  { keyword: "Suno AI 改编", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  { keyword: "AI 音乐 MV Suno", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
 ];
 
 const seedVideos = [
-  { bvid: "BV1z25E69EWB", playlist: "Suno 改编" },
-  { bvid: "BV1J2vXBvE3i", playlist: "Suno 改编" },
-  { bvid: "BV1CD421A7Nc", playlist: "原创歌曲" },
-  { bvid: "BV1fr421t7zz", playlist: "创作实验" },
-  { bvid: "BV1wuiyBQEdi", playlist: "创作教程" },
-  { bvid: "BV1PAm2B9Ei3", playlist: "创作教程" },
-  { bvid: "BV1UNwgeTER8", playlist: "创作教程" },
-  { bvid: "BV1rs9bYoEtk", playlist: "创作教程" }
+  { bvid: "BV14RqeBPEPU", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1osAVzWEmM", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno" },
+  { bvid: "BV1z25E69EWB", playlist: "黑蓝墨水就爱搞事儿 · 老歌翻新", playlistId: "blackblue-remix" },
+  { bvid: "BV1J2vXBvE3i", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style" },
+  { bvid: "BV1CD421A7Nc", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" },
+  { bvid: "BV1fr421t7zz", playlist: "B站 AI 音乐精选", playlistId: "bilibili-ai-music-picks" }
 ];
 
 const upSpaces = [
-  { mid: "1091", name: "需求参考 UP", keywords: ["Suno", "AI音乐", "AI 音乐"] },
-  { mid: "314203971", name: "黑蓝墨水就爱搞事儿", keywords: ["Suno", "AI音乐"] },
-  { mid: "356809114", name: "Suno教学", keywords: ["Suno", "AI音乐"] }
+  { mid: "1091", name: "天花板上吊着猫", playlist: "天花板上吊着猫 · Suno 实验", playlistId: "ceiling-cat-suno", keywords: ["Suno", "AI音乐", "AI 音乐"] },
+  { mid: "314203971", name: "黑蓝墨水就爱搞事儿", playlist: "黑蓝墨水就爱搞事儿 · 老歌翻新", playlistId: "blackblue-remix", keywords: ["Suno", "AI音乐"] },
+  { mid: "15687479", name: "所长bibabo", playlist: "所长bibabo · 风格改编", playlistId: "bibabo-style", keywords: ["Suno", "AI音乐"] }
+];
+
+const playlistPlans = [
+  {
+    id: "ceiling-cat-suno",
+    name: "天花板上吊着猫 · Suno 实验",
+    curator: "天花板上吊着猫",
+    summary: "围绕 Suno V5、流行音乐再创作和 AI 编曲实验的重点收录。",
+    status: "已上线",
+    plan: "持续补齐该 UP 的 Suno 系列作品，优先收录单曲、改编和完整 MV。"
+  },
+  {
+    id: "blackblue-remix",
+    name: "黑蓝墨水就爱搞事儿 · 老歌翻新",
+    curator: "黑蓝墨水就爱搞事儿",
+    summary: "老歌翻新、电子民谣和 AI 编曲方向的推荐歌单。",
+    status: "已上线",
+    plan: "继续补充该 UP 的 AI 翻新系列，按曲风和原曲年代拆分子歌单。"
+  },
+  {
+    id: "bibabo-style",
+    name: "所长bibabo · 风格改编",
+    curator: "所长bibabo",
+    summary: "突出风格迁移、声部编排和热门作品再创作的 Suno 歌单。",
+    status: "已上线",
+    plan: "补齐更多风格实验作品，并增加提示词/风格标签。"
+  },
+  {
+    id: "bilibili-ai-music-picks",
+    name: "B站 AI 音乐精选",
+    curator: "AI Music Hub",
+    summary: "站内高播放、适合试听的 AI 音乐作品，只收歌曲和音乐实验。",
+    status: "扩充中",
+    plan: "下一步加入更多知名 UP，并剔除工具讲解、账号引流和非歌曲内容。"
+  }
 ];
 
 const headers = {
@@ -53,7 +85,12 @@ function inferTags(title = "", description = "") {
   ].filter(Boolean);
 }
 
-function normalizeSearchItem(item, playlist) {
+function isMusicWork(title = "", description = "") {
+  const text = `${title} ${description}`.toLowerCase();
+  return !/教程|教学|课程|入门|零基础|提示词|保姆级|手把手|使用教程/i.test(text);
+}
+
+function normalizeSearchItem(item, seed) {
   const title = stripHtml(item.title);
   const description = stripHtml(item.description);
   return {
@@ -73,7 +110,8 @@ function normalizeSearchItem(item, playlist) {
       favorites: Number(item.favorites || 0)
     },
     tags: inferTags(title, description),
-    playlist,
+    playlist: seed.playlist,
+    playlistId: seed.playlistId,
     source: "bilibili-search"
   };
 }
@@ -84,10 +122,10 @@ async function fetchJson(url) {
   return res.json();
 }
 
-async function search(keyword, playlist) {
+async function search(query) {
   const url = new URL("https://api.bilibili.com/x/web-interface/search/type");
   url.searchParams.set("search_type", "video");
-  url.searchParams.set("keyword", keyword);
+  url.searchParams.set("keyword", query.keyword);
   url.searchParams.set("order", "totalrank");
   url.searchParams.set("duration", "0");
   url.searchParams.set("page", "1");
@@ -96,8 +134,9 @@ async function search(keyword, playlist) {
   const results = json?.data?.result || [];
   return results
     .filter((item) => item.bvid && /suno|ai|人工智能|音乐/i.test(`${item.title} ${item.description}`))
+    .filter((item) => isMusicWork(item.title, item.description))
     .slice(0, 12)
-    .map((item) => normalizeSearchItem(item, playlist));
+    .map((item) => normalizeSearchItem(item, query));
 }
 
 function normalizeImage(url = "") {
@@ -174,6 +213,7 @@ async function videoByBvid(seed) {
     },
     tags: inferTags(item.title, item.desc),
     playlist: typeof seed === "string" ? "手动收录" : seed.playlist,
+    playlistId: typeof seed === "string" ? "" : seed.playlistId,
     source: "bilibili-view"
   };
 }
@@ -192,7 +232,8 @@ async function collectSpaceVideos(space) {
     const videos = json?.data?.list?.vlist || [];
     for (const video of videos) {
       if (!video.bvid) continue;
-      const item = await videoByBvid({ bvid: video.bvid, playlist: `${space.name} · UP 收录` });
+      if (!isMusicWork(video.title, video.description)) continue;
+      const item = await videoByBvid({ bvid: video.bvid, playlist: space.playlist, playlistId: space.playlistId });
       if (item) items.push(item);
     }
   }
@@ -221,7 +262,7 @@ async function main() {
 
   for (const query of searches) {
     try {
-      collected.push(...await search(query.keyword, query.playlist));
+      collected.push(...await search(query));
     } catch (error) {
       console.warn(`Search failed for "${query.keyword}": ${error.message}`);
     }
@@ -238,6 +279,7 @@ async function main() {
   const payload = {
     generatedAt: new Date().toISOString(),
     source: "Bilibili public web APIs",
+    playlists: playlistPlans,
     items: dedupe(collected)
   };
 

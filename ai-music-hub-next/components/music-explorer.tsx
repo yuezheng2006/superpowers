@@ -1,8 +1,17 @@
 "use client";
 
-import { Clipboard, ExternalLink, Play, Search } from "lucide-react";
+import { ListMusic, Play, Search } from "lucide-react";
+import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
-import { UniversalPlayer } from "./universal-player";
+
+export type PlaylistPlan = {
+  id: string;
+  name: string;
+  curator: string;
+  summary: string;
+  status: string;
+  plan: string;
+};
 
 export type Track = {
   id: string;
@@ -22,16 +31,23 @@ export type Track = {
   };
   tags?: string[];
   playlist?: string;
+  playlistId?: string;
   source?: string;
 };
 
 export type Catalog = {
   generatedAt: string;
   source: string;
+  playlists?: PlaylistPlan[];
   items: Track[];
 };
 
 type SortKey = "views" | "newest" | "favorites" | "duration";
+
+export function coverSrc(url?: string) {
+  if (!url) return "";
+  return `/api/cover?url=${encodeURIComponent(url)}`;
+}
 
 function formatNumber(value = 0) {
   if (value >= 10000) return `${(value / 10000).toFixed(value >= 100000 ? 0 : 1)}万`;
@@ -52,34 +68,19 @@ function formatDate(value?: string) {
 
 export function MusicExplorer({ catalog }: { catalog: Catalog }) {
   const tracks = useMemo(() => catalog.items.filter((item) => item.bvid), [catalog.items]);
-  const [playlist, setPlaylist] = useState("全部");
+  const playlists = catalog.playlists || [];
+  const [playlistId, setPlaylistId] = useState("all");
   const [query, setQuery] = useState("");
   const [draftQuery, setDraftQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("views");
-  const [copied, setCopied] = useState(false);
-
-  const playlistEntries = useMemo(() => {
-    const counts = new Map<string, number>([["全部", tracks.length]]);
-    for (const track of tracks) {
-      const name = track.playlist || "未分组";
-      counts.set(name, (counts.get(name) || 0) + 1);
-    }
-    return [...counts.entries()];
-  }, [tracks]);
 
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     return tracks
-      .filter((track) => playlist === "全部" || track.playlist === playlist)
+      .filter((track) => playlistId === "all" || track.playlistId === playlistId)
       .filter((track) => {
         if (!normalizedQuery) return true;
-        return [
-          track.title,
-          track.author,
-          track.description,
-          track.playlist,
-          ...(track.tags || [])
-        ]
+        return [track.title, track.author, track.description, track.playlist, ...(track.tags || [])]
           .join(" ")
           .toLowerCase()
           .includes(normalizedQuery);
@@ -90,21 +91,15 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         if (sort === "duration") return (b.duration || 0) - (a.duration || 0);
         return (b.stats?.views || 0) - (a.stats?.views || 0);
       });
-  }, [playlist, query, sort, tracks]);
-
-  const [activeId, setActiveId] = useState(tracks[0]?.id || "");
-  const active = tracks.find((track) => track.id === activeId) || filtered[0] || tracks[0];
+  }, [playlistId, query, sort, tracks]);
 
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setQuery(draftQuery);
   }
 
-  async function copyLink() {
-    if (!active) return;
-    await navigator.clipboard.writeText(active.url);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1200);
+  function playlistCount(id: string) {
+    return tracks.filter((track) => track.playlistId === id).length;
   }
 
   return (
@@ -130,39 +125,51 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         </form>
       </header>
 
-      {active ? (
-        <section className="playerShell" aria-label="播放器">
-          <div className="playerCopy">
-            <p className="now">正在播放</p>
-            <h2>{active.title}</h2>
-            <p>
-              {active.author} · {formatDuration(active.duration)} · {formatNumber(active.stats?.views)} 播放 ·{" "}
-              {formatDate(active.publishedAt)}
-            </p>
-            <div className="actions">
-              <a href={active.url} target="_blank" rel="noreferrer">
-                <ExternalLink aria-hidden="true" size={17} />
-                打开 B 站
-              </a>
-              <button type="button" onClick={copyLink}>
-                <Clipboard aria-hidden="true" size={17} />
-                {copied ? "已复制" : "复制链接"}
-              </button>
+      <section className="heroBand" aria-label="推荐歌单">
+        <div className="heroCopy">
+          <p className="eyebrow">推荐歌单</p>
+          <h2>知名 UP 的 Suno / AI 音乐作品库</h2>
+          <p>首页只展示可播放作品和歌单计划，工具课、账号引流和非歌曲内容已从当前曲库移除。</p>
+        </div>
+        <div className="heroStats">
+          <span>{playlists.length} 个歌单</span>
+          <strong>{tracks.length}</strong>
+          <span>首种子作品</span>
+        </div>
+      </section>
+
+      <section className="playlistCards" aria-label="歌单计划">
+        {playlists.map((playlist) => (
+          <button
+            className="playlistCard"
+            key={playlist.id}
+            type="button"
+            aria-pressed={playlist.id === playlistId}
+            onClick={() => setPlaylistId(playlist.id)}
+          >
+            <span className="playlistStatus">{playlist.status}</span>
+            <h3>{playlist.name}</h3>
+            <p>{playlist.summary}</p>
+            <div className="playlistMeta">
+              <span>{playlist.curator}</span>
+              <span>{playlistCount(playlist.id)} 首</span>
             </div>
-          </div>
-          <div className="embedWrap">
-            <UniversalPlayer title={active.title} url={active.url} bvid={active.bvid} />
-          </div>
-        </section>
-      ) : null}
+            <div className="playlistPlan">
+              <ListMusic aria-hidden="true" size={16} />
+              <span>{playlist.plan}</span>
+            </div>
+          </button>
+        ))}
+      </section>
 
       <section className="controls" aria-label="筛选">
         <div>
           <label htmlFor="playlistSelect">歌单</label>
-          <select id="playlistSelect" value={playlist} onChange={(event) => setPlaylist(event.target.value)}>
-            {playlistEntries.map(([name]) => (
-              <option key={name} value={name}>
-                {name}
+          <select id="playlistSelect" value={playlistId} onChange={(event) => setPlaylistId(event.target.value)}>
+            <option value="all">全部推荐歌单</option>
+            {playlists.map((playlist) => (
+              <option key={playlist.id} value={playlist.id}>
+                {playlist.name}
               </option>
             ))}
           </select>
@@ -181,62 +188,45 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         </div>
       </section>
 
-      <section className="layout">
-        <aside className="playlistPanel">
-          <h2>歌单集合</h2>
-          <div className="playlistList">
-            {playlistEntries.map(([name, count]) => (
-              <button
-                key={name}
-                className="playlistItem"
-                type="button"
-                aria-pressed={name === playlist}
-                onClick={() => setPlaylist(name)}
-              >
-                <span>{name}</span>
-                <span>{count}</span>
-              </button>
+      <section>
+        <div className="sectionHead">
+          <h2>作品库</h2>
+          <p>曲库更新：{formatDate(catalog.generatedAt)}</p>
+        </div>
+        {filtered.length ? (
+          <div className="grid">
+            {filtered.map((track) => (
+              <article className="trackCard" key={track.id}>
+                <Link className="coverButton" href={`/tracks/${track.id}`} aria-label={`播放 ${track.title}`}>
+                  {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
+                  <span className="playBadge">
+                    <Play aria-hidden="true" size={13} />
+                    播放详情
+                  </span>
+                </Link>
+                <div className="trackBody">
+                  <div className="trackTags">
+                    {(track.tags || []).slice(0, 3).map((tag) => (
+                      <span className="tag" key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3>
+                    <Link href={`/tracks/${track.id}`}>{track.title}</Link>
+                  </h3>
+                  <p className="desc">{track.description || `${track.playlist || "AI 音乐"} · ${formatDuration(track.duration)}`}</p>
+                  <div className="trackFoot">
+                    <span>{track.author}</span>
+                    <span>{formatNumber(track.stats?.views)} 播放</span>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
-        </aside>
-        <section>
-          <div className="sectionHead">
-            <h2>作品库</h2>
-            <p>曲库更新：{formatDate(catalog.generatedAt)}</p>
-          </div>
-          {filtered.length ? (
-            <div className="grid">
-              {filtered.map((track) => (
-                <article className="trackCard" key={track.id}>
-                  <button className="coverButton" type="button" onClick={() => setActiveId(track.id)}>
-                    {track.cover ? <img src={track.cover} alt={track.title} /> : null}
-                    <span className="playBadge">
-                      <Play aria-hidden="true" size={13} />
-                      播放
-                    </span>
-                  </button>
-                  <div className="trackBody">
-                    <div className="trackTags">
-                      {(track.tags || []).slice(0, 3).map((tag) => (
-                        <span className="tag" key={tag}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <h3>{track.title}</h3>
-                    <p className="desc">{track.description || `${track.playlist || "AI 音乐"} · ${formatDuration(track.duration)}`}</p>
-                    <div className="trackFoot">
-                      <span>{track.author}</span>
-                      <span>{formatNumber(track.stats?.views)} 播放</span>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <div className="empty">没有匹配的作品。可以换一个关键词，或运行 npm run collect 刷新曲库。</div>
-          )}
-        </section>
+        ) : (
+          <div className="empty">没有匹配的作品。可以换一个关键词，或切换到全部推荐歌单。</div>
+        )}
       </section>
     </main>
   );

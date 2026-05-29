@@ -134,6 +134,109 @@ h1 {
   padding: 28px 0 32px;
 }
 
+.heroBand {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 28px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  padding: 42px 0 30px;
+}
+
+.heroCopy h2 {
+  max-width: 860px;
+  margin-bottom: 16px;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1;
+}
+
+.heroCopy p:not(.eyebrow) {
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.heroStats {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+  color: var(--muted);
+}
+
+.heroStats strong {
+  color: var(--text);
+  font-size: 72px;
+  line-height: 0.95;
+}
+
+.playlistCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  padding: 24px 0 4px;
+}
+
+.playlistCard {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.playlistCard[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: rgba(0, 168, 168, 0.12);
+}
+
+.playlistCard h3 {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.playlistCard p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.playlistStatus {
+  width: fit-content;
+  border: 1px solid rgba(231, 196, 90, 0.35);
+  border-radius: 999px;
+  color: var(--accent-3);
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.playlistMeta,
+.playlistPlan {
+  display: flex;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.playlistMeta {
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.playlistPlan {
+  align-items: flex-start;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  line-height: 1.55;
+}
+
 .playerCopy {
   display: flex;
   flex-direction: column;
@@ -377,6 +480,10 @@ select {
   -webkit-line-clamp: 2;
 }
 
+.trackCard h3 a {
+  text-decoration: none;
+}
+
 .desc {
   display: -webkit-box;
   min-height: 44px;
@@ -410,10 +517,132 @@ select {
   border-radius: 8px;
 }
 
+.detailTopbar {
+  padding: 22px 0;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.detailHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 32px;
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 32px;
+}
+
+.detailCopy h1 {
+  margin-bottom: 18px;
+  font-size: clamp(34px, 6vw, 76px);
+  line-height: 1.02;
+}
+
+.detailCopy p:not(.eyebrow) {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.detailMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.detailMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.detailCover {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #182325, #382c22);
+  box-shadow: var(--shadow);
+}
+
+.detailCover img,
+.relatedItem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailPlayer {
+  grid-template-columns: minmax(360px, 1.35fr) minmax(260px, 0.65fr);
+  min-height: 0;
+}
+
+.playlistInfo {
+  align-self: center;
+}
+
+.playlistInfo h2 {
+  font-size: 24px;
+}
+
+.playlistInfo p,
+.playlistInfo span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.relatedList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.relatedItem {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 72px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.relatedItem img {
+  aspect-ratio: 16 / 9;
+}
+
+.relatedItem span {
+  display: -webkit-box;
+  overflow: hidden;
+  padding-right: 12px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 @media (max-width: 860px) {
   .topbar,
   .playerShell,
-  .layout {
+  .layout,
+  .heroBand,
+  .detailHero {
     grid-template-columns: 1fr;
   }
 
@@ -429,6 +658,10 @@ select {
 
   .playerShell {
     min-height: 0;
+  }
+
+  .heroStats {
+    justify-items: start;
   }
 
   .layout {
