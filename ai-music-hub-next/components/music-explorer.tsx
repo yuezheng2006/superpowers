@@ -1,6 +1,6 @@
 "use client";
 
-import { ListMusic, Play, Search } from "lucide-react";
+import { Music2, Play, Search, UserRound } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 
@@ -42,8 +42,6 @@ export type Catalog = {
   items: Track[];
 };
 
-type SortKey = "views" | "newest" | "favorites" | "duration";
-
 export function coverSrc(url?: string) {
   if (!url) return "";
   return `/api/cover?url=${encodeURIComponent(url)}`;
@@ -61,23 +59,27 @@ function formatDuration(seconds = 0) {
   return `${mins}:${secs}`;
 }
 
-function formatDate(value?: string) {
-  if (!value) return "未知时间";
-  return new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium" }).format(new Date(value));
-}
-
 export function MusicExplorer({ catalog }: { catalog: Catalog }) {
   const tracks = useMemo(() => catalog.items.filter((item) => item.bvid), [catalog.items]);
   const playlists = catalog.playlists || [];
+  const authors = useMemo(
+    () =>
+      Array.from(new Set(tracks.map((track) => track.author))).map((author) => ({
+        name: author,
+        count: tracks.filter((track) => track.author === author).length,
+      })),
+    [tracks],
+  );
   const [playlistId, setPlaylistId] = useState("all");
+  const [author, setAuthor] = useState("all");
   const [query, setQuery] = useState("");
   const [draftQuery, setDraftQuery] = useState("");
-  const [sort, setSort] = useState<SortKey>("views");
 
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     return tracks
       .filter((track) => playlistId === "all" || track.playlistId === playlistId)
+      .filter((track) => author === "all" || track.author === author)
       .filter((track) => {
         if (!normalizedQuery) return true;
         return [track.title, track.author, track.description, track.playlist, ...(track.tags || [])]
@@ -85,13 +87,8 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
           .toLowerCase()
           .includes(normalizedQuery);
       })
-      .sort((a, b) => {
-        if (sort === "newest") return new Date(b.publishedAt || 0).getTime() - new Date(a.publishedAt || 0).getTime();
-        if (sort === "favorites") return (b.stats?.favorites || 0) - (a.stats?.favorites || 0);
-        if (sort === "duration") return (b.duration || 0) - (a.duration || 0);
-        return (b.stats?.views || 0) - (a.stats?.views || 0);
-      });
-  }, [playlistId, query, sort, tracks]);
+      .sort((a, b) => (b.stats?.views || 0) - (a.stats?.views || 0));
+  }, [author, playlistId, query, tracks]);
 
   function submitSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -125,20 +122,60 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         </form>
       </header>
 
-      <section className="heroBand" aria-label="推荐歌单">
-        <div className="heroCopy">
-          <p className="eyebrow">推荐歌单</p>
-          <h2>知名 UP 的 Suno / AI 音乐作品库</h2>
-          <p>首页只展示可播放作品和歌单计划，工具课、账号引流和非歌曲内容已从当前曲库移除。</p>
+      <section className="summaryStrip" aria-label="曲库概览">
+        <div>
+          <span>UP 主</span>
+          <strong>{authors.length}</strong>
         </div>
-        <div className="heroStats">
-          <span>{playlists.length} 个歌单</span>
+        <div>
+          <span>歌单</span>
+          <strong>{playlists.length}</strong>
+        </div>
+        <div>
+          <span>单曲</span>
           <strong>{tracks.length}</strong>
-          <span>首种子作品</span>
         </div>
       </section>
 
-      <section className="playlistCards" aria-label="歌单计划">
+      <section className="compactSection" aria-label="UP 主">
+        <div className="sectionHead">
+          <h2>UP 主</h2>
+        </div>
+        <div className="authorRail">
+          <button type="button" className="authorChip" aria-pressed={author === "all"} onClick={() => setAuthor("all")}>
+            <UserRound aria-hidden="true" size={15} />
+            全部
+            <span>{tracks.length}</span>
+          </button>
+          {authors.map((item) => (
+            <button
+              type="button"
+              className="authorChip"
+              aria-pressed={author === item.name}
+              key={item.name}
+              onClick={() => setAuthor(item.name)}
+            >
+              <UserRound aria-hidden="true" size={15} />
+              {item.name}
+              <span>{item.count}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="compactSection" aria-label="歌单">
+        <div className="sectionHead">
+          <h2>歌单</h2>
+        </div>
+        <div className="playlistCards">
+          <button className="playlistCard" type="button" aria-pressed={playlistId === "all"} onClick={() => setPlaylistId("all")}>
+            <span className="playlistStatus">全部</span>
+            <h3>全部推荐</h3>
+            <div className="playlistMeta">
+              <span>AI Music Hub</span>
+              <span>{tracks.length} 首</span>
+            </div>
+          </button>
         {playlists.map((playlist) => (
           <button
             className="playlistCard"
@@ -149,49 +186,19 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
           >
             <span className="playlistStatus">{playlist.status}</span>
             <h3>{playlist.name}</h3>
-            <p>{playlist.summary}</p>
             <div className="playlistMeta">
               <span>{playlist.curator}</span>
               <span>{playlistCount(playlist.id)} 首</span>
             </div>
-            <div className="playlistPlan">
-              <ListMusic aria-hidden="true" size={16} />
-              <span>{playlist.plan}</span>
-            </div>
           </button>
         ))}
-      </section>
-
-      <section className="controls" aria-label="筛选">
-        <div>
-          <label htmlFor="playlistSelect">歌单</label>
-          <select id="playlistSelect" value={playlistId} onChange={(event) => setPlaylistId(event.target.value)}>
-            <option value="all">全部推荐歌单</option>
-            {playlists.map((playlist) => (
-              <option key={playlist.id} value={playlist.id}>
-                {playlist.name}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="sortSelect">排序</label>
-          <select id="sortSelect" value={sort} onChange={(event) => setSort(event.target.value as SortKey)}>
-            <option value="views">播放量</option>
-            <option value="newest">发布时间</option>
-            <option value="favorites">收藏数</option>
-            <option value="duration">时长</option>
-          </select>
-        </div>
-        <div className="statline">
-          {filtered.length} 首 / {tracks.length} 首
         </div>
       </section>
 
-      <section>
+      <section className="compactSection">
         <div className="sectionHead">
-          <h2>作品库</h2>
-          <p>曲库更新：{formatDate(catalog.generatedAt)}</p>
+          <h2>单曲</h2>
+          <p>{filtered.length} / {tracks.length}</p>
         </div>
         {filtered.length ? (
           <div className="grid">
@@ -205,19 +212,15 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                   </span>
                 </Link>
                 <div className="trackBody">
-                  <div className="trackTags">
-                    {(track.tags || []).slice(0, 3).map((tag) => (
-                      <span className="tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                   <h3>
                     <Link href={`/tracks/${track.id}`}>{track.title}</Link>
                   </h3>
-                  <p className="desc">{track.description || `${track.playlist || "AI 音乐"} · ${formatDuration(track.duration)}`}</p>
                   <div className="trackFoot">
-                    <span>{track.author}</span>
+                    <span>
+                      <Music2 aria-hidden="true" size={13} />
+                      {track.author}
+                    </span>
+                    <span>{formatDuration(track.duration)}</span>
                     <span>{formatNumber(track.stats?.views)} 播放</span>
                   </div>
                 </div>
