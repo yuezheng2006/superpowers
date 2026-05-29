@@ -66,6 +66,12 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
+.topMeta {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .eyebrow,
 .now {
   margin: 0 0 6px;
@@ -85,7 +91,7 @@ p {
 
 h1 {
   margin-bottom: 0;
-  font-size: clamp(22px, 2.6vw, 30px);
+  font-size: clamp(22px, 2.4vw, 28px);
   line-height: 1;
 }
 
@@ -93,7 +99,7 @@ h1 {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  min-width: min(440px, 48vw);
+  min-width: min(360px, 42vw);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -193,8 +199,9 @@ h1 {
   display: grid;
   flex: 1 1 auto;
   min-height: 0;
-  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
-  gap: 14px;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 12px;
+  padding-top: 10px;
 }
 
 .sideStack,
@@ -242,18 +249,18 @@ h1 {
 .playlistCards {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
+  gap: 6px;
   min-height: 0;
   overflow: auto;
   padding-right: 2px;
 }
 
 .playlistCard {
-  display: grid;
-  min-height: 48px;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 4px 8px;
+  display: flex;
+  min-height: 36px;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding: 8px 10px;
   color: var(--text);
   background: var(--panel);
@@ -305,22 +312,22 @@ h1 {
 }
 
 .playlistMeta {
-  grid-column: 1 / -1;
-  justify-content: space-between;
+  flex: 0 0 auto;
+  justify-content: flex-end;
   margin-top: 0;
 }
 
 .authorRail {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 8px;
-  max-height: 198px;
+  gap: 6px;
+  max-height: 170px;
   overflow: auto;
 }
 
 .authorChip {
   display: inline-flex;
-  min-height: 32px;
+  min-height: 30px;
   align-items: center;
   justify-content: space-between;
   gap: 7px;
@@ -340,6 +347,14 @@ h1 {
 
 .authorChip span {
   color: inherit;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.authorChip span:last-child {
+  flex: 0 0 auto;
   opacity: 0.72;
   font-size: 12px;
 }
@@ -529,6 +544,79 @@ select {
   max-height: calc(100vh - 176px);
   overflow: auto;
   padding-right: 2px;
+}
+
+.trackList {
+  display: grid;
+  gap: 6px;
+  max-height: calc(100vh - 106px);
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.trackRow {
+  display: grid;
+  grid-template-columns: 88px minmax(180px, 1.4fr) minmax(110px, 0.5fr) minmax(120px, 0.65fr) 54px 64px;
+  gap: 10px;
+  align-items: center;
+  min-height: 58px;
+  padding: 6px 10px 6px 6px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.trackRow:hover,
+.trackRow:focus-visible {
+  border-color: rgba(57, 198, 166, 0.76);
+  outline: 0;
+}
+
+.rowCover {
+  display: block;
+  overflow: hidden;
+  width: 88px;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #182325, #382c22);
+}
+
+.rowCover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rowTitle,
+.rowAuthor,
+.rowPlaylist,
+.rowDuration,
+.rowViews {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowTitle {
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.rowAuthor,
+.rowPlaylist,
+.rowDuration,
+.rowViews {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.rowDuration,
+.rowViews {
+  text-align: right;
 }
 
 .trackCard {
@@ -851,6 +939,7 @@ select {
 
   .playlistCards,
   .grid,
+  .trackList,
   .relatedList {
     max-height: none;
     overflow: visible;
@@ -858,6 +947,17 @@ select {
 
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .trackRow {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+
+  .rowAuthor,
+  .rowPlaylist,
+  .rowDuration,
+  .rowViews {
+    display: none;
   }
 
   .authorRail {
@@ -896,16 +996,6 @@ select {
 
   .controls {
     display: grid;
-  }
-
-  .playlistCards {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
-
-  .playlistCard {
-    flex: 0 0 220px;
   }
 
   .summaryStrip div {

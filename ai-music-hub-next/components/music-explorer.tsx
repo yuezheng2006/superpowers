@@ -1,6 +1,6 @@
 "use client";
 
-import { Music2, Play, Search, UserRound } from "lucide-react";
+import { Search } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 
@@ -62,6 +62,20 @@ function formatDuration(seconds = 0) {
 export function MusicExplorer({ catalog }: { catalog: Catalog }) {
   const tracks = useMemo(() => catalog.items.filter((item) => item.bvid), [catalog.items]);
   const playlists = catalog.playlists || [];
+  const playlistTrackCounts = useMemo(
+    () =>
+      new Map(
+        playlists.map((playlist) => [
+          playlist.id,
+          tracks.filter((track) => track.playlistId === playlist.id).length,
+        ]),
+      ),
+    [playlists, tracks],
+  );
+  const visiblePlaylists = useMemo(
+    () => playlists.filter((playlist) => (playlistTrackCounts.get(playlist.id) || 0) > 0),
+    [playlistTrackCounts, playlists],
+  );
   const authors = useMemo(
     () =>
       Array.from(new Set(tracks.map((track) => track.author))).map((author) => ({
@@ -95,16 +109,12 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
     setQuery(draftQuery);
   }
 
-  function playlistCount(id: string) {
-    return tracks.filter((track) => track.playlistId === id).length;
-  }
-
   return (
     <main className="desktopShell">
       <header className="topbar">
         <div>
-          <p className="eyebrow">Bilibili Suno Radar</p>
           <h1>AI Music Hub</h1>
+          <p className="topMeta">{authors.length} UP / {visiblePlaylists.length} 歌单 / {tracks.length} 单曲</p>
         </div>
         <form className="search" onSubmit={submitSearch}>
           <Search aria-hidden="true" size={18} />
@@ -122,21 +132,6 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         </form>
       </header>
 
-      <section className="summaryStrip" aria-label="曲库概览">
-        <div>
-          <span>UP 主</span>
-          <strong>{authors.length}</strong>
-        </div>
-        <div>
-          <span>歌单</span>
-          <strong>{playlists.length}</strong>
-        </div>
-        <div>
-          <span>单曲</span>
-          <strong>{tracks.length}</strong>
-        </div>
-      </section>
-
       <div className="desktopWorkspace">
         <div className="sideStack">
           <section className="compactSection" aria-label="UP 主">
@@ -145,8 +140,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
             </div>
             <div className="authorRail">
               <button type="button" className="authorChip" aria-pressed={author === "all"} onClick={() => setAuthor("all")}>
-                <UserRound aria-hidden="true" size={15} />
-                全部
+                <span>全部 UP</span>
                 <span>{tracks.length}</span>
               </button>
               {authors.map((item) => (
@@ -157,8 +151,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                   key={item.name}
                   onClick={() => setAuthor(item.name)}
                 >
-                  <UserRound aria-hidden="true" size={15} />
-                  {item.name}
+                  <span>{item.name}</span>
                   <span>{item.count}</span>
                 </button>
               ))}
@@ -171,29 +164,25 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
             </div>
             <div className="playlistCards">
               <button className="playlistCard" type="button" aria-pressed={playlistId === "all"} onClick={() => setPlaylistId("all")}>
-                <span className="playlistStatus">全部</span>
                 <h3>全部推荐</h3>
                 <div className="playlistMeta">
-                  <span>AI Music Hub</span>
                   <span>{tracks.length} 首</span>
                 </div>
               </button>
-            {playlists.map((playlist) => (
-              <button
-                className="playlistCard"
-                key={playlist.id}
-                type="button"
-                aria-pressed={playlist.id === playlistId}
-                onClick={() => setPlaylistId(playlist.id)}
-              >
-                <span className="playlistStatus">{playlist.status}</span>
-                <h3>{playlist.name}</h3>
-                <div className="playlistMeta">
-                  <span>{playlist.curator}</span>
-                  <span>{playlistCount(playlist.id)} 首</span>
-                </div>
-              </button>
-            ))}
+              {visiblePlaylists.map((playlist) => (
+                <button
+                  className="playlistCard"
+                  key={playlist.id}
+                  type="button"
+                  aria-pressed={playlist.id === playlistId}
+                  onClick={() => setPlaylistId(playlist.id)}
+                >
+                  <h3>{playlist.name}</h3>
+                  <div className="playlistMeta">
+                    <span>{playlistTrackCounts.get(playlist.id) || 0} 首</span>
+                  </div>
+                </button>
+              ))}
             </div>
           </section>
         </div>
@@ -201,33 +190,21 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         <section className="compactSection trackPane">
           <div className="sectionHead">
             <h2>单曲</h2>
-            <p>{filtered.length} / {tracks.length}</p>
+            <p>{filtered.length} 首</p>
           </div>
           {filtered.length ? (
-            <div className="grid">
+            <div className="trackList">
               {filtered.map((track) => (
-                <article className="trackCard" key={track.id}>
-                  <Link className="coverButton" href={`/tracks/${track.id}`} aria-label={`播放 ${track.title}`}>
+                <Link className="trackRow" href={`/tracks/${track.id}`} key={track.id} aria-label={`播放 ${track.title}`}>
+                  <span className="rowCover">
                     {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
-                    <span className="playBadge">
-                      <Play aria-hidden="true" size={13} />
-                      播放
-                    </span>
-                  </Link>
-                  <div className="trackBody">
-                    <h3>
-                      <Link href={`/tracks/${track.id}`}>{track.title}</Link>
-                    </h3>
-                    <div className="trackFoot">
-                      <span>
-                        <Music2 aria-hidden="true" size={13} />
-                        {track.author}
-                      </span>
-                      <span>{formatDuration(track.duration)}</span>
-                      <span>{formatNumber(track.stats?.views)} 播放</span>
-                    </div>
-                  </div>
-                </article>
+                  </span>
+                  <span className="rowTitle">{track.title}</span>
+                  <span className="rowAuthor">{track.author}</span>
+                  <span className="rowPlaylist">{track.playlist || "未分组"}</span>
+                  <span className="rowDuration">{formatDuration(track.duration)}</span>
+                  <span className="rowViews">{formatNumber(track.stats?.views)}</span>
+                </Link>
               ))}
             </div>
           ) : (
