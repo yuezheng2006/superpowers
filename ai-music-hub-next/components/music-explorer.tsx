@@ -100,7 +100,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
   }
 
   return (
-    <main>
+    <main className="desktopShell">
       <header className="topbar">
         <div>
           <p className="eyebrow">Bilibili Suno Radar</p>
@@ -137,100 +137,104 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
         </div>
       </section>
 
-      <section className="compactSection" aria-label="UP 主">
-        <div className="sectionHead">
-          <h2>UP 主</h2>
-        </div>
-        <div className="authorRail">
-          <button type="button" className="authorChip" aria-pressed={author === "all"} onClick={() => setAuthor("all")}>
-            <UserRound aria-hidden="true" size={15} />
-            全部
-            <span>{tracks.length}</span>
-          </button>
-          {authors.map((item) => (
-            <button
-              type="button"
-              className="authorChip"
-              aria-pressed={author === item.name}
-              key={item.name}
-              onClick={() => setAuthor(item.name)}
-            >
-              <UserRound aria-hidden="true" size={15} />
-              {item.name}
-              <span>{item.count}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <section className="compactSection" aria-label="歌单">
-        <div className="sectionHead">
-          <h2>歌单</h2>
-        </div>
-        <div className="playlistCards">
-          <button className="playlistCard" type="button" aria-pressed={playlistId === "all"} onClick={() => setPlaylistId("all")}>
-            <span className="playlistStatus">全部</span>
-            <h3>全部推荐</h3>
-            <div className="playlistMeta">
-              <span>AI Music Hub</span>
-              <span>{tracks.length} 首</span>
+      <div className="desktopWorkspace">
+        <div className="sideStack">
+          <section className="compactSection" aria-label="UP 主">
+            <div className="sectionHead">
+              <h2>UP 主</h2>
             </div>
-          </button>
-        {playlists.map((playlist) => (
-          <button
-            className="playlistCard"
-            key={playlist.id}
-            type="button"
-            aria-pressed={playlist.id === playlistId}
-            onClick={() => setPlaylistId(playlist.id)}
-          >
-            <span className="playlistStatus">{playlist.status}</span>
-            <h3>{playlist.name}</h3>
-            <div className="playlistMeta">
-              <span>{playlist.curator}</span>
-              <span>{playlistCount(playlist.id)} 首</span>
+            <div className="authorRail">
+              <button type="button" className="authorChip" aria-pressed={author === "all"} onClick={() => setAuthor("all")}>
+                <UserRound aria-hidden="true" size={15} />
+                全部
+                <span>{tracks.length}</span>
+              </button>
+              {authors.map((item) => (
+                <button
+                  type="button"
+                  className="authorChip"
+                  aria-pressed={author === item.name}
+                  key={item.name}
+                  onClick={() => setAuthor(item.name)}
+                >
+                  <UserRound aria-hidden="true" size={15} />
+                  {item.name}
+                  <span>{item.count}</span>
+                </button>
+              ))}
             </div>
-          </button>
-        ))}
-        </div>
-      </section>
+          </section>
 
-      <section className="compactSection">
-        <div className="sectionHead">
-          <h2>单曲</h2>
-          <p>{filtered.length} / {tracks.length}</p>
-        </div>
-        {filtered.length ? (
-          <div className="grid">
-            {filtered.map((track) => (
-              <article className="trackCard" key={track.id}>
-                <Link className="coverButton" href={`/tracks/${track.id}`} aria-label={`播放 ${track.title}`}>
-                  {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
-                  <span className="playBadge">
-                    <Play aria-hidden="true" size={13} />
-                    播放详情
-                  </span>
-                </Link>
-                <div className="trackBody">
-                  <h3>
-                    <Link href={`/tracks/${track.id}`}>{track.title}</Link>
-                  </h3>
-                  <div className="trackFoot">
-                    <span>
-                      <Music2 aria-hidden="true" size={13} />
-                      {track.author}
-                    </span>
-                    <span>{formatDuration(track.duration)}</span>
-                    <span>{formatNumber(track.stats?.views)} 播放</span>
-                  </div>
+          <section className="compactSection sidePlaylists" aria-label="歌单">
+            <div className="sectionHead">
+              <h2>歌单</h2>
+            </div>
+            <div className="playlistCards">
+              <button className="playlistCard" type="button" aria-pressed={playlistId === "all"} onClick={() => setPlaylistId("all")}>
+                <span className="playlistStatus">全部</span>
+                <h3>全部推荐</h3>
+                <div className="playlistMeta">
+                  <span>AI Music Hub</span>
+                  <span>{tracks.length} 首</span>
                 </div>
-              </article>
+              </button>
+            {playlists.map((playlist) => (
+              <button
+                className="playlistCard"
+                key={playlist.id}
+                type="button"
+                aria-pressed={playlist.id === playlistId}
+                onClick={() => setPlaylistId(playlist.id)}
+              >
+                <span className="playlistStatus">{playlist.status}</span>
+                <h3>{playlist.name}</h3>
+                <div className="playlistMeta">
+                  <span>{playlist.curator}</span>
+                  <span>{playlistCount(playlist.id)} 首</span>
+                </div>
+              </button>
             ))}
+            </div>
+          </section>
+        </div>
+
+        <section className="compactSection trackPane">
+          <div className="sectionHead">
+            <h2>单曲</h2>
+            <p>{filtered.length} / {tracks.length}</p>
           </div>
-        ) : (
-          <div className="empty">没有匹配的作品。可以换一个关键词，或切换到全部推荐歌单。</div>
-        )}
-      </section>
+          {filtered.length ? (
+            <div className="grid">
+              {filtered.map((track) => (
+                <article className="trackCard" key={track.id}>
+                  <Link className="coverButton" href={`/tracks/${track.id}`} aria-label={`播放 ${track.title}`}>
+                    {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
+                    <span className="playBadge">
+                      <Play aria-hidden="true" size={13} />
+                      播放
+                    </span>
+                  </Link>
+                  <div className="trackBody">
+                    <h3>
+                      <Link href={`/tracks/${track.id}`}>{track.title}</Link>
+                    </h3>
+                    <div className="trackFoot">
+                      <span>
+                        <Music2 aria-hidden="true" size={13} />
+                        {track.author}
+                      </span>
+                      <span>{formatDuration(track.duration)}</span>
+                      <span>{formatNumber(track.stats?.views)} 播放</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="empty">没有匹配的作品。可以换一个关键词，或切换到全部推荐歌单。</div>
+          )}
+        </section>
+      </div>
     </main>
   );
 }

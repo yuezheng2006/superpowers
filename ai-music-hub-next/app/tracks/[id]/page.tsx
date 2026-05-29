@@ -72,7 +72,7 @@ export default async function TrackPage({ params }: { params: Promise<{ id: stri
     .slice(0, 4);
 
   return (
-    <main>
+    <main className="detailShell">
       <header className="detailTopbar">
         <Link className="backLink" href="/">
           <ArrowLeft aria-hidden="true" size={18} />
@@ -80,70 +80,64 @@ export default async function TrackPage({ params }: { params: Promise<{ id: stri
         </Link>
       </header>
 
-      <section className="detailHero">
-        <div className="detailCopy">
-          <p className="eyebrow">{track.playlist}</p>
-          <h1>{track.title}</h1>
-          <p>{track.description}</p>
-          <div className="detailMeta">
-            <span>
-              <Radio aria-hidden="true" size={16} />
-              {track.author}
-            </span>
-            <span>
-              <Clock aria-hidden="true" size={16} />
-              {formatDuration(track.duration)}
-            </span>
-            <span>
-              <Play aria-hidden="true" size={16} />
-              {formatNumber(track.stats?.views)} 播放
-            </span>
-            <span>
-              <Heart aria-hidden="true" size={16} />
-              {formatNumber(track.stats?.favorites)} 收藏
-            </span>
-          </div>
-          <div className="trackTags">
-            {(track.tags || []).map((tag) => (
-              <span className="tag" key={tag}>
-                {tag}
+      <section className="detailDesk" aria-label="播放详情">
+        <div className="detailMain">
+          <div className="detailCopy">
+            <p className="eyebrow">{track.playlist}</p>
+            <h1>{track.title}</h1>
+            <p>{track.description}</p>
+            <div className="detailMeta">
+              <span>
+                <Radio aria-hidden="true" size={16} />
+                {track.author}
               </span>
-            ))}
+              <span>
+                <Clock aria-hidden="true" size={16} />
+                {formatDuration(track.duration)}
+              </span>
+              <span>
+                <Play aria-hidden="true" size={16} />
+                {formatNumber(track.stats?.views)} 播放
+              </span>
+              <span>
+                <Heart aria-hidden="true" size={16} />
+                {formatNumber(track.stats?.favorites)} 收藏
+              </span>
+            </div>
+          </div>
+          <div className="embedWrap">
+            <UniversalPlayer title={track.title} url={track.url} bvid={track.bvid} />
           </div>
         </div>
-        <div className="detailCover">
-          {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
-        </div>
-      </section>
 
-      <section className="playerShell detailPlayer" aria-label="播放详情">
-        <div className="embedWrap">
-          <UniversalPlayer title={track.title} url={track.url} bvid={track.bvid} />
-        </div>
-        <aside className="playlistInfo">
-          <p className="eyebrow">歌单计划</p>
-          <h2>{playlist?.name || track.playlist}</h2>
-          <p>{playlist?.summary}</p>
-          <p>{playlist?.plan}</p>
-          <span>发布：{formatDate(track.publishedAt)}</span>
+        <aside className="detailSide">
+          <div className="detailCover">
+            {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
+          </div>
+          <div className="playlistInfo">
+            <p className="eyebrow">歌单计划</p>
+            <h2>{playlist?.name || track.playlist}</h2>
+            <p>{playlist?.summary}</p>
+            <p>{playlist?.plan}</p>
+            <span>发布：{formatDate(track.publishedAt)}</span>
+          </div>
+          {related.length ? (
+            <div className="relatedBlock">
+              <div className="sectionHead">
+                <h2>同歌单作品</h2>
+              </div>
+              <div className="relatedList">
+                {related.map((item) => (
+                  <Link className="relatedItem" href={`/tracks/${item.id}`} key={item.id}>
+                    {item.cover ? <img src={coverSrc(item.cover)} alt={item.title} /> : null}
+                    <span>{item.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </aside>
       </section>
-
-      {related.length ? (
-        <section>
-          <div className="sectionHead">
-            <h2>同歌单作品</h2>
-          </div>
-          <div className="relatedList">
-            {related.map((item) => (
-              <Link className="relatedItem" href={`/tracks/${item.id}`} key={item.id}>
-                {item.cover ? <img src={coverSrc(item.cover)} alt={item.title} /> : null}
-                <span>{item.title}</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-      ) : null}
     </main>
   );
 }
