@@ -3,6 +3,7 @@
 import { Music2, Play, Search, UserRound } from "lucide-react";
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
+import { GlobalPlayer } from "./global-player";
 
 export type PlaylistPlan = {
   id: string;
@@ -74,6 +75,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
   const [author, setAuthor] = useState("all");
   const [query, setQuery] = useState("");
   const [draftQuery, setDraftQuery] = useState("");
+  const [currentTrackId, setCurrentTrackId] = useState<string | undefined>();
 
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -177,16 +179,18 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
             <div className="grid">
               {filtered.map((track) => (
                 <article className="trackCard" key={track.id}>
-                  <Link className="coverButton" href={`/tracks/${track.id}`} aria-label={`播放 ${track.title}`}>
+                  <button
+                    className="coverButton"
+                    onClick={() => setCurrentTrackId(track.id)}
+                    aria-label={`播放 ${track.title}`}
+                  >
                     {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
                     <span className="playBadge">
                       <Play aria-hidden="true" size={13} />
                     </span>
-                  </Link>
+                  </button>
                   <div className="trackBody">
-                    <h3>
-                      <Link href={`/tracks/${track.id}`}>{track.title}</Link>
-                    </h3>
+                    <h3>{track.title}</h3>
                     <div className="trackFoot">
                       <span>{track.author}</span>
                       <span>{formatDuration(track.duration)}</span>
@@ -200,6 +204,12 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
           )}
         </section>
       </div>
+
+      <GlobalPlayer
+        tracks={filtered}
+        currentTrackId={currentTrackId}
+        onTrackChange={setCurrentTrackId}
+      />
     </main>
   );
 }
