@@ -2,8 +2,9 @@
 
 import { Music2, Play, Search, UserRound } from "lucide-react";
 import Link from "next/link";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useState, useEffect } from "react";
 import { GlobalPlayer } from "./global-player";
+import { LyricsPanel } from "./lyrics-panel";
 
 export type PlaylistPlan = {
   id: string;
@@ -34,6 +35,7 @@ export type Track = {
   playlist?: string;
   playlistId?: string;
   source?: string;
+  lyrics?: string;
 };
 
 export type Catalog = {
@@ -74,8 +76,8 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
   const [playlistId, setPlaylistId] = useState("all");
   const [author, setAuthor] = useState("all");
   const [query, setQuery] = useState("");
-  const [draftQuery, setDraftQuery] = useState("");
   const [currentTrackId, setCurrentTrackId] = useState<string | undefined>();
+  const [currentTime, setCurrentTime] = useState(0);
 
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -92,117 +94,207 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
       .sort((a, b) => (b.stats?.views || 0) - (a.stats?.views || 0));
   }, [author, playlistId, query, tracks]);
 
-  function submitSearch(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setQuery(draftQuery);
-  }
-
   function playlistCount(id: string) {
     return tracks.filter((track) => track.playlistId === id).length;
   }
 
-  return (
-    <main className="desktopShell">
-      <header className="topbar">
-        <div>
-          <h1>AI Music Hub</h1>
-          <p className="subtitle">{authors.length} UP · {playlists.length} 歌单 · {tracks.length} 单曲</p>
-        </div>
-        <form className="search" onSubmit={submitSearch}>
-          <Search aria-hidden="true" size={18} />
-          <input
-            value={draftQuery}
-            onChange={(event) => {
-              setDraftQuery(event.target.value);
-              setQuery(event.target.value);
-            }}
-            type="search"
-            placeholder="搜索"
-            aria-label="搜索歌曲、UP、标签"
-          />
-        </form>
-      </header>
+  const currentTrack = currentTrackId ? tracks.find(t => t.id === currentTrackId) : undefined;
 
-      <div className="desktopWorkspace">
-        <div className="sideStack">
-          <section className="compactSection" aria-label="UP 主">
-            <h2 className="sideTitle">UP 主</h2>
-            <div className="authorRail">
-              <button type="button" className="authorChip" aria-pressed={author === "all"} onClick={() => setAuthor("all")}>
-                全部
-                <span>{tracks.length}</span>
+  // Auto-play first track if no selection
+  useEffect(() => {
+    if (!currentTrackId && filtered.length > 0) {
+      setCurrentTrackId(filtered[0].id);
+    }
+  }, [filtered, currentTrackId]);
+
+  // Track playback time for lyrics synchronization
+  useEffect(() => {
+    if (!currentTrack) {
+      setCurrentTime(0);
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setCurrentTime(prev => prev + 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [currentTrack]);
+
+  // Get playlists filtered by selected author
+  const filteredPlaylists = useMemo(() => {
+    if (author === "all") return playlists;
+    return playlists.filter(playlist => {
+      const playlistTracks = tracks.filter(t => t.playlistId === playlist.id);
+      return playlistTracks.some(t => t.author === author);
+    });
+  }, [author, playlists, tracks]);
+
+  return (
+    <main className="modernShell">
+      <div className="appHeader">
+        <div className="headerLeft">
+          <h1 className="appTitle">AI Music Hub</h1>
+          <div className="headerStats">
+            <span>{tracks.length} 首歌曲</span>
+            <span className="dot">·</span>
+            <span>{authors.length} 位创作者</span>
+          </div>
+        </div>
+        <div className="headerSearch">
+          <Search size={18} />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            type="search"
+            placeholder="搜索歌曲或创作者..."
+            aria-label="搜索"
+          />
+        </div>
+      </div>
+
+      <div className="appBody threeColumn">
+        {/* Left Column: Creator List */}
+        <aside className="creatorColumn">
+          <h3 className="columnTitle">创作者</h3>
+          <div className="creatorList">
+            <button
+              className={`creatorItem ${author === "all" ? "active" : ""}`}
+              onClick={() => {
+                setAuthor("all");
+                setPlaylistId("all");
+              }}
+            >
+              <UserRound size={16} />
+              <span>全部创作者</span>
+              <span className="itemCount">{tracks.length}</span>
+            </button>
+            {authors.map((item) => (
+              <button
+                key={item.name}
+                className={`creatorItem ${author === item.name ? "active" : ""}`}
+                onClick={() => {
+                  setAuthor(item.name);
+                  setPlaylistId("all");
+                }}
+              >
+                <UserRound size={16} />
+                <span>{item.name}</span>
+                <span className="itemCount">{item.count}</span>
               </button>
-              {authors.map((item) => (
+            ))}
+          </div>
+        </aside>
+
+        {/* Middle Column: Playlist List */}
+        <aside className="playlistColumn">
+          <h3 className="columnTitle">
+            {author === "all" ? "所有歌单" : `${author} 的歌单`}
+          </h3>
+          <div className="playlistList">
+            <button
+              className={`playlistItem ${playlistId === "all" ? "active" : ""}`}
+              onClick={() => setPlaylistId("all")}
+            >
+              <Music2 size={16} />
+              <span>全部歌曲</span>
+              <span className="itemCount">{filtered.length}</span>
+            </button>
+            {filteredPlaylists.map((playlist) => (
+              <button
+                key={playlist.id}
+                className={`playlistItem ${playlistId === playlist.id ? "active" : ""}`}
+                onClick={() => setPlaylistId(playlist.id)}
+              >
+                <Music2 size={16} />
+                <span>{playlist.name}</span>
+                <span className="itemCount">{playlistCount(playlist.id)}</span>
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        {/* Right Column: Content and Playback Area */}
+        <div className="contentColumn">
+          {currentTrack && (
+            <div className="playerAndLyricsArea">
+              <div className="videoPlayerArea">
+                <div className="videoPlayerContainer">
+                  <iframe
+                    key={currentTrack.id}
+                    title={`播放: ${currentTrack.title}`}
+                    src={`https://player.bilibili.com/player.html?bvid=${encodeURIComponent(currentTrack.bvid)}&page=1&high_quality=1&autoplay=0`}
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
+                  />
+                </div>
+                <div className="videoPlayerInfo">
+                  <h3 className="videoPlayerTitle">{currentTrack.title}</h3>
+                  <p className="videoPlayerMeta">{currentTrack.author} · {formatNumber(currentTrack.stats?.views)} 播放</p>
+                </div>
+              </div>
+              <LyricsPanel
+                lrcContent={currentTrack.lyrics || null}
+                currentTime={currentTime}
+                isPlaying={true}
+              />
+            </div>
+          )}
+
+          <div className="contentHeader">
+            <h2 className="contentTitle">
+              {playlistId === "all" ? "播放列表" : playlists.find(p => p.id === playlistId)?.name || "歌曲列表"}
+            </h2>
+            <span className="contentCount">{filtered.length} 首</span>
+          </div>
+
+          {filtered.length ? (
+            <div className="trackList">
+              {filtered.map((track, index) => (
                 <button
-                  type="button"
-                  className="authorChip"
-                  aria-pressed={author === item.name}
-                  key={item.name}
-                  onClick={() => setAuthor(item.name)}
+                  key={track.id}
+                  className={`trackRow ${currentTrackId === track.id ? "playing" : ""}`}
+                  onClick={() => setCurrentTrackId(track.id)}
                 >
-                  {item.name}
-                  <span>{item.count}</span>
+                  <div className="trackIndex">
+                    {currentTrackId === track.id ? (
+                      <div className="playingIndicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                    ) : (
+                      <span className="indexNumber">{index + 1}</span>
+                    )}
+                  </div>
+                  <div className="trackCover">
+                    {track.cover ? (
+                      <img src={coverSrc(track.cover)} alt="" />
+                    ) : (
+                      <div className="coverPlaceholder">
+                        <Music2 size={20} />
+                      </div>
+                    )}
+                    <div className="coverOverlay">
+                      <Play size={16} />
+                    </div>
+                  </div>
+                  <div className="trackInfo">
+                    <div className="trackTitle">{track.title}</div>
+                    <div className="trackMeta">{track.author}</div>
+                  </div>
+                  <div className="trackDuration">{formatDuration(track.duration)}</div>
                 </button>
               ))}
             </div>
-          </section>
-
-          <section className="compactSection sidePlaylists" aria-label="歌单">
-            <h2 className="sideTitle">歌单</h2>
-            <div className="playlistCards">
-              <button className="playlistCard" type="button" aria-pressed={playlistId === "all"} onClick={() => setPlaylistId("all")}>
-                <h3>全部推荐</h3>
-                <span className="playlistCount">{tracks.length} 首</span>
-              </button>
-            {playlists.map((playlist) => (
-              <button
-                className="playlistCard"
-                key={playlist.id}
-                type="button"
-                aria-pressed={playlist.id === playlistId}
-                onClick={() => setPlaylistId(playlist.id)}
-              >
-                <h3>{playlist.name}</h3>
-                <span className="playlistCount">{playlistCount(playlist.id)} 首</span>
-              </button>
-            ))}
-            </div>
-          </section>
-        </div>
-
-        <section className="compactSection trackPane">
-          <div className="sectionHead">
-            <h2>单曲</h2>
-            <p>{filtered.length} 首</p>
-          </div>
-          {filtered.length ? (
-            <div className="grid">
-              {filtered.map((track) => (
-                <article className="trackCard" key={track.id}>
-                  <button
-                    className="coverButton"
-                    onClick={() => setCurrentTrackId(track.id)}
-                    aria-label={`播放 ${track.title}`}
-                  >
-                    {track.cover ? <img src={coverSrc(track.cover)} alt={track.title} /> : null}
-                    <span className="playBadge">
-                      <Play aria-hidden="true" size={13} />
-                    </span>
-                  </button>
-                  <div className="trackBody">
-                    <h3>{track.title}</h3>
-                    <div className="trackFoot">
-                      <span>{track.author}</span>
-                      <span>{formatDuration(track.duration)}</span>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
           ) : (
-            <div className="empty">没有匹配的作品</div>
+            <div className="emptyState">
+              <Music2 size={48} />
+              <p>没有找到匹配的歌曲</p>
+            </div>
           )}
-        </section>
+        </div>
       </div>
 
       <GlobalPlayer
