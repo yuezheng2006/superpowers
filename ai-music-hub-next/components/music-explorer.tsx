@@ -186,7 +186,7 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
           </div>
         </aside>
 
-        {/* Middle Column: Playlist List */}
+        {/* Middle Column: Playlist and Track List */}
         <aside className="playlistColumn">
           <h3 className="columnTitle">
             {author === "all" ? "所有歌单" : `${author} 的歌单`}
@@ -212,35 +212,6 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
               </button>
             ))}
           </div>
-        </aside>
-
-        {/* Right Column: Content and Playback Area */}
-        <div className="contentColumn">
-          {currentTrack && (
-            <div className="playerAndLyricsArea">
-              <div className="videoPlayerArea">
-                <div className="videoPlayerContainer">
-                  <iframe
-                    key={currentTrack.id}
-                    title={`播放: ${currentTrack.title}`}
-                    src={`https://player.bilibili.com/player.html?bvid=${encodeURIComponent(currentTrack.bvid)}&page=1&high_quality=1&autoplay=0`}
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
-                  />
-                </div>
-                <div className="videoPlayerInfo">
-                  <h3 className="videoPlayerTitle">{currentTrack.title}</h3>
-                  <p className="videoPlayerMeta">{currentTrack.author} · {formatNumber(currentTrack.stats?.views)} 播放</p>
-                </div>
-              </div>
-              <LyricsPanel
-                lrcContent={currentTrack.lyrics || null}
-                currentTime={currentTime}
-                isPlaying={true}
-              />
-            </div>
-          )}
 
           <div className="contentHeader">
             <h2 className="contentTitle">
@@ -284,7 +255,6 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
                     <div className="trackTitle">{track.title}</div>
                     <div className="trackMeta">{track.author}</div>
                   </div>
-                  <div className="trackDuration">{formatDuration(track.duration)}</div>
                 </button>
               ))}
             </div>
@@ -292,6 +262,35 @@ export function MusicExplorer({ catalog }: { catalog: Catalog }) {
             <div className="emptyState">
               <Music2 size={48} />
               <p>没有找到匹配的歌曲</p>
+            </div>
+          )}
+        </aside>
+
+        {/* Right Column: Player Only */}
+        <div className="playerColumn">
+          {currentTrack && (
+            <div className="playerAndLyricsArea">
+              <div className="videoPlayerArea">
+                <div className="videoPlayerContainer">
+                  <iframe
+                    key={currentTrack.id}
+                    title={`播放: ${currentTrack.title}`}
+                    src={`https://player.bilibili.com/player.html?bvid=${encodeURIComponent(currentTrack.bvid)}&page=1&high_quality=1&autoplay=0`}
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
+                  />
+                </div>
+                <div className="videoPlayerInfo">
+                  <h3 className="videoPlayerTitle">{currentTrack.title}</h3>
+                  <p className="videoPlayerMeta">{currentTrack.author} · {formatNumber(currentTrack.stats?.views)} 播放</p>
+                </div>
+              </div>
+              <LyricsPanel
+                lrcContent={currentTrack.lyrics || null}
+                currentTime={currentTime}
+                isPlaying={true}
+              />
             </div>
           )}
         </div>
